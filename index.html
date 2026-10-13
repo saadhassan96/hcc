@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Human-Centered Computing Group | Tulane University</title>
+  <meta name="description" content="We build and study computing systems with people in mind: tools that make communication and information accessible, visualizations that explain data and models, and imaging methods for science and medicine.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#285c4d">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inclusive-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/site.css">
+  <!-- Apply the saved or system theme before first paint so the page does not flash. -->
+  <script>
+    try { var t = localStorage.getItem('hcc-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+  <!--
+    THIS FILE IS A TEMPLATE. Edit content in content/hcc-content.xlsx, then run
+    python3 build.py to produce index.html. Text that is not in the spreadsheet
+    (section intros, header, footer) can be edited right here.
+  -->
+  <a class="skip" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-web" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></g></symbol>
+    <symbol id="i-group" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="3"/><path d="M6.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="5" cy="10.5" r="2.1"/><circle cx="19" cy="10.5" r="2.1"/><path d="M1.5 18.5a3.6 3.6 0 0 1 4.6-3.4M22.5 18.5a3.6 3.6 0 0 0-4.6-3.4"/></g></symbol>
+    <symbol id="i-scholar" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm-6.5 9.6V16c0 1.9 2.9 4 6.5 4s6.5-2.1 6.5-4v-3.4L12 16.2l-6.5-3.6z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></symbol>
+    <symbol id="i-rg" viewBox="0 0 24 24"><text x="12" y="16.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="12.5" fill="currentColor">RG</text></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 1.8v2.6M12 19.6v2.6M1.8 12h2.6M19.6 12h2.6M4.8 4.8l1.8 1.8M17.4 17.4l1.8 1.8M4.8 19.2l1.8-1.8M17.4 6.6l1.8-1.8"/></g></symbol>
+    <symbol id="i-mark" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M20 3.5c9.6 0 16.5 6.6 16.5 15.6 0 10-7.6 17.4-17.2 17.4C9.6 36.5 3.5 29.6 3.5 20.8 3.5 10.6 10.6 3.5 20 3.5z"/><path d="M21.2 10c5.4 0 9.3 3.9 9.3 9.1 0 5.9-4.4 10.4-10.1 10.4-5.3 0-8.9-4-8.9-9.1 0-6 4.2-10.4 9.7-10.4z"/><path d="M21.6 16.3c2.2 0 3.6 1.5 3.6 3.5 0 2.3-1.7 4-3.9 4-2.1 0-3.4-1.5-3.4-3.5 0-2.3 1.6-4 3.7-4z"/></g></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="#top" aria-label="Human-Centered Computing Group, Tulane University, back to top">
+        <svg class="mark" aria-hidden="true" focusable="false"><use href="#i-mark"></use></svg>
+        <span class="brand-text"><span class="b1">HCC Group</span><span class="b2">Tulane University</span></span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="nav" aria-label="Sections">
+        <ul>
+          <li><a href="#news">News</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#people">People</a></li>
+          <li><a href="#grants">Grants</a></li>
+          <li><a class="join-link" href="#join">Join us</a></li>
+        </ul>
+      </nav>
+      <button class="theme-btn" type="button" aria-label="Use dark theme" title="Switch theme">
+        <svg class="icon moon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg>
+        <svg class="icon sun" aria-hidden="true" focusable="false"><use href="#i-sun"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <h1 id="hero-title">Human-Centered Computing Group</h1>
+          <p class="tagline">We build and study computing systems with people in mind: tools that make communication and information accessible, visualizations that explain data and models, and imaging methods for science and medicine.</p>
+          <div class="codirectors-strip">
+            <p id="codir-label">Co-directed by</p>
+            <ul aria-labelledby="codir-label">
+              <li><a href="#rebecca-faust"><div class="avatar sm"><span aria-hidden="true">RF</span><img src="images/people/rebecca-faust.jpg" alt="Rebecca Faust smiling, with long light brown hair, in front of green shrubs." width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><span>Rebecca Faust</span></a></li>
+<li><a href="#saad-hassan"><div class="avatar sm"><span aria-hidden="true">SH</span><img src="images/people/saad-hassan.jpg" alt="Saad Hassan wearing a maroon shirt and black and golden glasses." width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><span>Saad Hassan</span></a></li>
+<li><a href="#brian-summa"><div class="avatar sm"><span aria-hidden="true">BS</span><img src="images/people/brian-summa.jpg" alt="Brian Summa smiling, in a blue checked shirt, in a lab." width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><span>Brian Summa</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Everyone currently in the group, built from the spreadsheet. Names are in the People section. -->
+        <ul class="faces" aria-hidden="true">
+          <li><img src="images/people/rebecca-faust.jpg" alt="" width="160" height="160" decoding="async" title="Rebecca Faust"></li>
+<li><img src="images/people/saad-hassan.jpg" alt="" width="160" height="160" decoding="async" title="Saad Hassan"></li>
+<li><img src="images/people/brian-summa.jpg" alt="" width="160" height="160" decoding="async" title="Brian Summa"></li>
+<li><img src="images/people/emily-ribando-gros.jpg" alt="" width="160" height="160" decoding="async" title="Emily Ribando-Gros"></li>
+<li><img src="images/people/cooper-maira.jpg" alt="" width="160" height="160" decoding="async" title="Cooper Maira"></li>
+<li><img src="images/people/fangzheng-wu.jpg" alt="" width="160" height="160" decoding="async" title="Fangzheng Wu"></li>
+<li><img src="images/people/syeda-mah-noor-asad.jpg" alt="" width="160" height="160" decoding="async" title="Syeda Mah Noor Asad"></li>
+<li><img src="images/people/yongbo-chen.jpg" alt="" width="160" height="160" decoding="async" title="Yongbo Chen"></li>
+<li><img src="images/people/nazmun-nahar-khanom.jpg" alt="" width="160" height="160" decoding="async" title="Nazmun Nahar Khanom"></li>
+<li><img src="images/people/chaelin-kim.jpg" alt="" width="160" height="160" decoding="async" title="Chaelin Kim"></li>
+<li><img src="images/people/yan-zhu.jpg" alt="" width="160" height="160" decoding="async" title="Yan Zhu"></li>
+<li><img src="images/people/arjun-dadhwal.jpg" alt="" width="160" height="160" decoding="async" title="Arjun Dadhwal"></li>
+<li><img src="images/people/abby-ortego.jpg" alt="" width="160" height="160" decoding="async" title="Abby Ortego"></li>
+<li><img src="images/people/evelyn-nguyen.jpg" alt="" width="160" height="160" decoding="async" title="Hoang Dieu Linh (Evelyn) Nguyen"></li>
+<li><img src="images/people/campbell-endries.jpg" alt="" width="160" height="160" decoding="async" title="Campbell Endries"></li>
+<li><img src="images/people/aaron-gershkovich.jpg" alt="" width="160" height="160" decoding="async" title="Aaron Gershkovich"></li>
+<li><img src="images/people/nikhil-modayur.jpg" alt="" width="160" height="160" decoding="async" title="Nikhil Modayur"></li>
+<li><img src="images/people/jaret-solomon.jpg" alt="" width="160" height="160" decoding="async" title="Jaret Solomon"></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="about wrap" aria-label="About the group">
+      <p>The Human-Centered Computing (HCC) Group brings together three faculty in the Department of Computer Science at Tulane University, in New Orleans, with their students and staff. We work across human-computer interaction, accessibility, visualization, computer graphics, and applied AI, often with partners in medicine, education, and local government.</p>
+      <div class="labs">
+        <p id="labs-label">Research groups</p>
+        <ul aria-labelledby="labs-label"><li><a href="https://rjfaust.github.io/">Rebecca Faust</a> <span>Visualization, Data science</span></li>
+<li><a href="https://saadh.info/a11y/">NOLA A11y Lab</a> <span>Saad Hassan</span></li>
+<li><a href="https://tulanevisgraphics.bitbucket.io/">Tulane Visualization and Graphics Group</a> <span>Brian Summa</span></li></ul>
+      </div>
+    </section>
+
+    <!-- ============================== NEWS ============================== -->
+    <section id="news" class="block news" aria-labelledby="news-title">
+      <div class="wrap">
+        <h2 id="news-title">News</h2>
+        <div class="features">
+          <article class="feature">
+          <p class="date"><time datetime="2026-09-03">Sep 2026</time></p>
+          <h3 id="feat-0">Tulane researchers aim to reduce cancer treatment time with new tech</h3>
+          <p>Fox 8 featured MAGIC-SCAN, the ARPA-H funded scanner co-led by <a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a> and Quincy Brown. It maps the whole surface of a removed tumor in minutes so surgeons can see whether any cancer remains. Brian’s group handles the computational processing of the images.</p>
+          <p class="more"><a href="https://www.fox8live.com/2026/08/31/tulane-researchers-aim-reduce-cancer-treatment-time-with-new-tech/" aria-describedby="feat-0">Read more</a></p>
+        </article>
+<article class="feature">
+          <p class="date"><time datetime="2026-09-01">Sep 2026</time></p>
+          <h3 id="feat-1">PhD students <a href="https://cybersakura.github.io/">Yongbo Chen</a> and <a href="https://www.thesupercarry.com/">Yan Zhu</a> shared new preprints on visualization for debugging data-intensive programs, tuning text embeddings with human feedback (KeySI), and object-level evidence in vision-language models (ProtoLIP).</h3>
+          
+          <p class="more"><a href="https://arxiv.org/abs/2606.30884" aria-describedby="feat-1">Read more</a></p>
+        </article>
+<article class="feature">
+          <p class="date"><time datetime="2026-07-26">Jul 2026</time></p>
+          <h3 id="feat-2">Our team received a new $899,868 collaborative NSF award, with <a href="https://saadh.info/">Saad Hassan</a> as PI: Designing Civic AI to Connect Residents, Communities, and Local Governments.</h3>
+          <p>Joint with <a href="https://www.cs.tulane.edu/~aculotta/">Aron Culotta</a>, <a href="https://www.nicholasmattei.net/">Nicholas Mattei</a>, and Carnegie Mellon University colleagues <a href="https://www.motahhare.com/">Motahhare Eslami</a> and <a href="https://www.cs.cmu.edu/~johnz/">John Zimmerman</a>.</p>
+          <p class="more"><a href="https://www.nsf.gov/awardsearch/show-award?AWD_ID=2619509" aria-describedby="feat-2">Read more</a></p>
+        </article>
+<article class="feature">
+          <p class="date"><time datetime="2026-06-24">Jun 2026</time></p>
+          <h3 id="feat-3">Two papers and a demo accepted to ASSETS 2026: a scoping review of accessible data visualization research, plus an ASL video comprehension tool and demo led by <a href="https://chaelin0722.github.io/introduction/">Chaelin Kim</a>.</h3>
+          
+          <p class="more"><a href="https://assets26.sigaccess.org/" aria-describedby="feat-3">Read more</a></p>
+        </article>
+<article class="feature">
+          <p class="date"><time datetime="2026">2026</time></p>
+          <h3 id="feat-4">Full paper with <a href="https://rjfaust.github.io/">Rebecca Faust</a> on spatial visual analytics for verifying multi-document summaries accepted to IEEE VIS 2026.</h3>
+          
+          <p class="more"><a href="https://ieeevis.org/year/2026/program/papers/" aria-describedby="feat-4">Read more</a></p>
+        </article>
+<article class="feature">
+          <p class="date"><time datetime="2026">2026</time></p>
+          <h3 id="feat-5">Paper led by Cooper Maira on ambient, real-time digitization of glass slide microscopy published in Nature Communications.</h3>
+          <p>The work turns everyday microscope slide review into digital data as pathologists work, a step toward AI that assists right at the microscope.</p>
+          
+        </article>
+        </div>
+        <ol class="news-list" id="news-list">
+          <li><time datetime="2026">2026</time><p>Paper with Wei Liu and <a href="https://people.cs.vt.edu/north/">Chris North</a> on LLM-augmented semantic steering of text embedding projections accepted to AVI 2026.</p></li>
+<li><time datetime="2026">2026</time><p><a href="https://rjfaust.github.io/">Rebecca Faust</a> received a Tulane Committee on Research (COR) Fellowship to design and study haptic data representations on smartphones.</p></li>
+<li><time datetime="2026-06-10">Jun 2026</time><p>Our lab was awarded three internal grants totaling ~$26,000, including the Jurist Summer Fellowship in AI, the Data, AI, and Community Research Grant, and the Lavin-Bernick Grant, to support research on AI-based reading support tools and accessible personal health visualizations.</p></li>
+<li><time datetime="2026-05-10">May 2026</time><p><a href="https://scholar.google.com/citations?user=syojgz0AAAAJ">Fangzheng Wu</a> and <a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a> released a series of preprints on reading and steering the internal states of diffusion transformers and language models. <a class="inline-more" href="https://www.alphaxiv.org/@brian-summa" aria-label="Details: Fangzheng Wu and Brian Summa released a series of preprints on reading and steering the in">Details</a></p></li>
+<li><time datetime="2026-04-16">Apr 2026</time><p><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a> presented MAGIC-SCAN in the biotech lightning talks at the Tulane Research, Innovation, and Creativity Summit (TRICS). <a class="inline-more" href="https://innovation.tulane.edu/node/673" aria-label="Details: Brian Summa presented MAGIC-SCAN in the biotech lightning talks at the Tulane Research, In">Details</a></p></li>
+<li><time datetime="2026-04-03">Apr 2026</time><p>Paper on ASL educators’ perspectives on AI accepted to CHI 2026. Saad will present it at the conference in Barcelona, Spain 🇪🇸! <a class="inline-more" href="https://chi2026.acm.org/" aria-label="Details: Paper on ASL educators’ perspectives on AI accepted to CHI 2026.">Details</a></p></li>
+<li><time datetime="2026-01-15">Jan 2026</time><p>Congrats to former lab member <a href="https://www.linkedin.com/in/nikhil-modayur">Nikhil Modayur</a> for receiving an Honorable Mention for the 2026 CRA Outstanding Undergraduate Researcher Award! <a class="inline-more" href="https://www.linkedin.com/in/nikhil-modayur" aria-label="Details: Congrats to former lab member Nikhil Modayur for receiving an Honorable Mention for the 20">Details</a></p></li>
+<li><time datetime="2025-11-07">Nov 2025</time><p><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a> and Quincy Brown received Tulane’s 2025 Convergence Award for research that crosses schools and disciplines. <a class="inline-more" href="https://research.tulane.edu/news/1653537/Tulane%20faculty%20honored%20at%20the%202025%20Research,%20Scholarship%20and%20Artistic%20Achievement%20Awards%20ceremony" aria-label="Details: Brian Summa and Quincy Brown received Tulane’s 2025 Convergence Award for research that cr">Details</a></p></li>
+<li data-extra><time datetime="2025-10-25">Oct 2025</time><p>Saad is attending ASSETS 2025 in Denver to present one paper on reading support technologies and two demos. <a class="inline-more" href="https://assets25.sigaccess.org/" aria-label="Details: Saad is attending ASSETS 2025 in Denver to present one paper on reading support technologi">Details</a></p></li>
+<li data-extra><time datetime="2025-08-01">Aug 2025</time><p>Two demos accepted to ASSETS 2025, led by <a href="https://chaelin0722.github.io/introduction/">Chaelin Kim</a> and <a href="https://tithi-khan.github.io/">Nazmun Nahar Khanom</a>, on text simplification and an ASL learning tool for EMS. Will be presented at the conference in Denver! <a class="inline-more" href="https://assets25.sigaccess.org/" aria-label="Details: Two demos accepted to ASSETS 2025, led by Chaelin Kim and Nazmun Nahar Khanom, on text sim">Details</a></p></li>
+<li data-extra><time datetime="2025-06-25">Jun 2025</time><p>Our workshop on participant recruitment in accessibility research was accepted to ASSETS 2025. <a class="inline-more" href="https://assets25.sigaccess.org/" aria-label="Details: Our workshop on participant recruitment in accessibility research was accepted to ASSETS 2">Details</a></p></li>
+<li data-extra><time datetime="2025-06-19">Jun 2025</time><p>Our review of reading support tools, with <a href="https://oliveralonzo.com/">Oliver Alonzo</a>, was accepted to ASSETS 2025 and nominated for Best Paper. <a class="inline-more" href="https://oliveralonzo.com/" aria-label="Details: Our review of reading support tools, with Oliver Alonzo, was accepted to ASSETS 2025 and n">Details</a></p></li>
+<li data-extra><time datetime="2025-05-18">May 2025</time><p>Our lab received two internal grants totaling ~$18,500: a Carol Lavin Bernick Faculty Grant ($10,000) for an AI-powered ASL learning platform and a Community-Engaged AI Summer Research Program grant ($8,500) to build a public accessibility barrier dashboard.</p></li>
+<li data-extra><time datetime="2025-04-30">Apr 2025</time><p><a href="https://matybohacek.com/">Matyas Bohacek</a> presented our paper on an AI-driven video-based ASL dictionary at W4A 2025 in Sydney. <a class="inline-more" href="https://matybohacek.com/" aria-label="Details: Matyas Bohacek presented our paper on an AI-driven video-based ASL dictionary at W4A 2025 ">Details</a></p></li>
+<li data-extra><time datetime="2025-03-21">Mar 2025</time><p><a href="https://www.cs.cmu.edu/~bam/">Brad Myers</a> visited our lab in New Orleans to talk about his new book Pick, Click, Flick!: The Story of Interaction Techniques! <a class="inline-more" href="https://www.cs.cmu.edu/~bam/" aria-label="Details: Brad Myers visited our lab in New Orleans to talk about his new book Pick, Click, Flick!: ">Details</a></p></li>
+<li data-extra><time datetime="2025-02-27">Feb 2025</time><p>FSboard, an ASL fingerspelling dataset built with Google Research and DPAN, accepted to CVPR 2025. <a class="inline-more" href="https://research.google/" aria-label="Details: FSboard, an ASL fingerspelling dataset built with Google Research and DPAN, accepted to CV">Details</a></p></li>
+<li data-extra><time datetime="2025-01-15">Jan 2025</time><p>Our paper on multimodal affective captioning with haptics accepted to CHI 2025 in Yokohama! Saad also served on the PC and Best Paper Award committee. <a class="inline-more" href="https://chi2025.acm.org/" aria-label="Details: Our paper on multimodal affective captioning with haptics accepted to CHI 2025 in Yokohama">Details</a></p></li>
+<li data-extra><time datetime="2025-01-12">Jan 2025</time><p>Saad received an NSF IUCRC Planning Grant as Co-PI alongside <a href="https://www.cs.tulane.edu/~aculotta/">Aron Culotta</a> (PI), Zizhan Zheng (Co-PI), Zhengming Ding (Co-PI), and Sylvia Ley (Co-PI) to establish the Tulane University partner site for the Center for Accessible Healthcare through AI-Augmented Decisions (AHeAD). <a class="inline-more" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2515250" aria-label="Details: Saad received an NSF IUCRC Planning Grant as Co-PI alongside Aron Culotta (PI), Zizhan Zhe">Details</a></p></li>
+<li data-extra><time datetime="2025-01-06">Jan 2025</time><p>The Advocate followed up on MAGIC-SCAN, the Tulane Cancer Moonshot project co-led by <a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a>, as the team builds its next prototype for operating-room testing. <a class="inline-more" href="https://www.theadvocate.com/baton_rouge/entertainment_life/louisiana_health/tulane-cancer-project-new-orleans/article_d9e85e05-50e0-5b6a-99ad-8973cd127b16.html" aria-label="Details: The Advocate followed up on MAGIC-SCAN, the Tulane Cancer Moonshot project co-led by Brian">Details</a></p></li>
+<li data-extra><time datetime="2025-01-04">Jan 2025</time><p>Congrats to <a href="https://www.linkedin.com/in/aaron-gershkovich">Aaron Gershkovich</a> for receiving an Honorable Mention for the 2024–2025 CRA Outstanding Undergraduate Researcher Award! <a class="inline-more" href="https://www.linkedin.com/in/aaron-gershkovich-46232a2b3/" aria-label="Details: Congrats to Aaron Gershkovich for receiving an Honorable Mention for the 2024–2025 CRA Out">Details</a></p></li>
+<li data-extra><time datetime="2024-11-17">Nov 2024</time><p>Our journal article exploring video-span selection for ASL learners was published in ACM TACCESS. <a class="inline-more" href="https://dl.acm.org/journal/taccess" aria-label="Details: Our journal article exploring video-span selection for ASL learners was published in ACM T">Details</a></p></li>
+<li data-extra><time datetime="2024-10-28">Oct 2024</time><p>Saad is attending ASSETS 2024 virtually to present two posters on a rich closed-captioning format and designing for neurodivergent scholars. Saad also serves as Workshop Chair. <a class="inline-more" href="https://assets24.sigaccess.org/" aria-label="Details: Saad is attending ASSETS 2024 virtually to present two posters on a rich closed-captioning">Details</a></p></li>
+<li data-extra><time datetime="2024-10-19">Oct 2024</time><p>Saad attended HCOMP 2024 in Pittsburgh and co-organized the PACE workshop with <a href="https://www.motahhare.com/">Motahhare Eslami</a>, <a href="https://www.cs.tulane.edu/~aculotta/">Aron Culotta</a>, Nick Mattei, and Mah Noor. <a class="inline-more" href="https://www.humancomputation.com/" aria-label="Details: Saad attended HCOMP 2024 in Pittsburgh and co-organized the PACE workshop with Motahhare E">Details</a></p></li>
+<li data-extra><time datetime="2024-10-14">Oct 2024</time><p><a href="https://rjfaust.github.io/">Rebecca Faust</a> and colleagues received a Best Paper award at the Visualization in Data Science (VDS) Symposium at IEEE VIS 2024. <a class="inline-more" href="https://doi.org/10.1109/VDS63897.2024.00005" aria-label="Details: Rebecca Faust and colleagues received a Best Paper award at the Visualization in Data Scie">Details</a></p></li>
+<li data-extra><time datetime="2024-10-13">Oct 2024</time><p>Two papers with <a href="https://rjfaust.github.io/">Rebecca Faust</a> at IEEE VIS 2024: ImageSI, on semantic interaction for image projections, and a compass for temporal topic embeddings in TVCG. <a class="inline-more" href="https://doi.org/10.1109/TVCG.2024.3456143" aria-label="Details: Two papers with Rebecca Faust at IEEE VIS 2024: ImageSI, on semantic interaction for image">Details</a></p></li>
+<li data-extra><time datetime="2024-10-13">Oct 2024</time><p><a href="https://demiqin.github.io/">Demi Qin</a> and <a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a> presented merge tree neural networks for rapid topological comparison at IEEE VIS 2024 (published in TVCG). <a class="inline-more" href="https://arxiv.org/abs/2404.05879" aria-label="Details: Demi Qin and Brian Summa presented merge tree neural networks for rapid topological compar">Details</a></p></li>
+<li data-extra><time datetime="2024-09-30">Sep 2024</time><p><a href="https://www.linkedin.com/in/aaron-gershkovich">Aaron Gershkovich</a> presented a poster at the undergraduate symposium. <a class="inline-more" href="https://www.linkedin.com/in/aaron-gershkovich-46232a2b3/" aria-label="Details: Aaron Gershkovich presented a poster at the undergraduate symposium.">Details</a></p></li>
+<li data-extra><time datetime="2024-08-19">Aug 2024</time><p>We welcome <a href="https://chaelin0722.github.io/introduction/">Chaelin Kim</a>, <a href="https://tithi-khan.github.io/">Nazmun Nahar Khanom</a>, and <a href="https://syedamahnoorasad.github.io/">Syeda Mah Noor Asad</a> to the lab! <a class="inline-more" href="https://chaelin0722.github.io/introduction/" aria-label="Details: We welcome Chaelin Kim, Nazmun Nahar Khanom, and Syeda Mah Noor Asad to the lab!">Details</a></p></li>
+<li data-extra><time datetime="2024-08-13">Aug 2024</time><p>President Joe Biden visited Tulane to announce up to $22.9 million from ARPA-H for MAGIC-SCAN, an AI-assisted cancer margin scanner co-led by <a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a> and Quincy Brown. Brian demonstrated the system for the President and First Lady. <a class="inline-more" href="https://news.tulane.edu/pr/president-joe-biden-will-announce-23-million-funding-tulane-university-invent-advanced-cancer" aria-label="Details: President Joe Biden will announce up to $23 million in funding for Tulane University to in">Details</a></p></li>
+<li data-extra><time datetime="2024">2024</time><p><a href="https://rjfaust.github.io/">Rebecca Faust</a> joined Tulane University as an Assistant Professor of Computer Science, and welcomed PhD students <a href="https://cybersakura.github.io/">Yongbo Chen</a> and <a href="https://www.thesupercarry.com/">Yan Zhu</a>. <a class="inline-more" href="https://rjfaust.github.io/" aria-label="Details: Rebecca Faust joined Tulane University as an Assistant Professor of Computer Science, and ">Details</a></p></li>
+<li data-extra><time datetime="2024-05-13">May 2024</time><p>Saad is attending CHI 2024 in Honolulu, Hawaii 🌺 to present two papers on affective captions and a dance video comprehension tool (both received Honorable Mentions!). Saad also served on the PC and Best Paper Award committee. <a class="inline-more" href="https://chi2024.acm.org/" aria-label="Details: Saad is attending CHI 2024 in Honolulu, Hawaii 🌺 to present two papers on affective captio">Details</a></p></li>
+<li data-extra><time datetime="2024-05-10">May 2024</time><p>Saad attended his PhD hooding ceremony in Rochester, a year after defending.</p></li>
+<li data-extra><time datetime="2024-05-04">May 2024</time><p>Saad was awarded a Tulane Committee on Research (COR) Fellowship ($5,000) for reading support tools for people who are deaf or hard of hearing.</p></li>
+<li data-extra><time datetime="2024-04-17">Apr 2024</time><p>Our lab received a $102,281 Louisiana Board of Regents award, with Saad as PI for our project, &quot;Enhancing Expressive and Receptive ASL Learning Using AI-Powered Tools&quot;. <a class="inline-more" href="https://www.laregents.edu/wp-content/uploads/2024/04/7.-RSI-Committee-April-24-2024.pdf" aria-label="Details: Our lab received a $102,281 Louisiana Board of Regents award, with Saad as PI for our proj">Details</a></p></li>
+<li data-extra><time datetime="2024-04-12">Apr 2024</time><p>Lab member <a href="https://tithi-khan.github.io/">Nazmun Nahar Khanom</a> presented a demo of AI-based reading support tools at the Tulane Research, Innovation, and Creativity Summit (TRICS). <a class="inline-more" href="https://tithi-khan.github.io/" aria-label="Details: Lab member Nazmun Nahar Khanom presented a demo of AI-based reading support tools at the T">Details</a></p></li>
+<li data-extra><time datetime="2024-02-23">Feb 2024</time><p>Saad attended the CRA Early Career Workshop in Washington, D.C. He met program officers and fellow junior faculty. <a class="inline-more" href="https://cra.org/events/early-career-workshop/" aria-label="Details: Saad attended the CRA Early Career Workshop in Washington, D.C.">Details</a></p></li>
+<li data-extra><time datetime="2023-12-28">Dec 2023</time><p>Congrats to <a href="https://www.linkedin.com/in/aaron-gershkovich">Aaron Gershkovich</a> for winning the &quot;Best Prototype&quot; award at the Annual Undergraduate Poster Session! <a class="inline-more" href="https://www.linkedin.com/in/aaron-gershkovich-46232a2b3/" aria-label="Details: Congrats to Aaron Gershkovich for winning the &quot;Best Prototype&quot; award at the Annual Undergr">Details</a></p></li>
+<li data-extra><time datetime="2023-12-10">Dec 2023</time><p>Saad attended NeurIPS 2023 in New Orleans as a co-author of a paper on sign language data collection for the PopSign game. <a class="inline-more" href="https://nips.cc/Conferences/2023" aria-label="Details: Saad attended NeurIPS 2023 in New Orleans.">Details</a></p></li>
+<li data-extra><time datetime="2023-11-28">Nov 2023</time><p>Jonathan Pool from CVS Health visited our lab! <a class="inline-more" href="https://old.panlex.org/people/pool.shtml" aria-label="Details: Jonathan Pool from CVS Health visited our lab!">Details</a></p></li>
+<li data-extra><time datetime="2023-11-11">Nov 2023</time><p>Saad gave a talk at the inaugural NOAI: 11/11 AI Symposium. <a class="inline-more" href="https://nolajazzmuseum.org/events/2023/11/11/noai" aria-label="Details: Saad gave a talk at the inaugural NOAI: 11/11 AI Symposium.">Details</a></p></li>
+<li data-extra><time datetime="2023-11-07">Nov 2023</time><p>Willie Payne visited our lab. <a class="inline-more" href="https://williepayne.com/" aria-label="Details: Willie Payne visited our lab.">Details</a></p></li>
+<li data-extra><time datetime="2023-11-02">Nov 2023</time><p>Saad gave talks at Duolingo and CMU in Pittsburgh on his Duolingo Dissertation Award research. <a class="inline-more" href="https://www.duolingo.com/" aria-label="Details: Saad gave talks at Duolingo and CMU in Pittsburgh on his Duolingo Dissertation Award resea">Details</a></p></li>
+<li data-extra><time datetime="2023-10-23">Oct 2023</time><p>Saad attended ASSETS 2023 to present a demo of an automatic video-based ASL dictionary system and served as Proceedings Chair. <a class="inline-more" href="https://assets23.sigaccess.org/" aria-label="Details: Saad attended ASSETS 2023 to present a demo of an automatic video-based ASL dictionary sys">Details</a></p></li>
+<li data-extra><time datetime="2023-09-14">Sep 2023</time><p>Paper from Saad’s Google internship with <a href="https://sites.cc.gatech.edu/home/thad/">Thad Starner</a> was accepted at MobileHCI 2023! Thad will present it in Athens, Greece 🇬🇷. <a class="inline-more" href="https://sites.cc.gatech.edu/home/thad/" aria-label="Details: Paper from Saad’s Google internship with Thad Starner was accepted at MobileHCI 2023!">Details</a></p></li>
+<li data-extra><time datetime="2023-08-01">Aug 2023</time><p><a href="https://saadh.info/">Saad Hassan</a> joined Tulane University as a tenure-track Assistant Professor. <a class="inline-more" href="https://sse.tulane.edu/cs" aria-label="Details: Saad Hassan joined Tulane University as a tenure-track Assistant Professor.">Details</a></p></li>
+<li data-extra><time datetime="2022-06-21">Jun 2022</time><p><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a> won a $750,000 Department of Energy Early Career Award to make massive supercomputer datasets easier to share, search, and analyze. <a class="inline-more" href="https://news.tulane.edu/pr/tulane-professor-wins-early-career-award-tame-massive-supercomputer-datasets" aria-label="Details: Brian Summa won a $750,000 Department of Energy Early Career Award to make massive superco">Details</a></p></li>
+        </ol>
+        <button type="button" class="more-toggle" data-toggle-list="news-list" aria-expanded="false" data-more="Show all 46 news items" data-less="Show fewer news items">Show all 46 news items</button>
+      </div>
+    </section>
+
+    <!-- ============================ RESEARCH ============================ -->
+    <section id="research" class="block" aria-labelledby="research-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="research-title">Research</h2>
+        </div>
+        <div class="projects">
+          <article class="project" id="project-accessviz">
+          <h3>Accessible data visualization</h3>
+          <p class="leads"><a href="#saad-hassan">Saad Hassan</a> and <a href="#rebecca-faust">Rebecca Faust</a></p>
+          <p class="summary">Charts and data representations that people with disabilities can explore, from haptic encodings on smartphones to accessible personal health visualizations, grounded in a review of the field.</p>
+          <p class="keywords">Haptics, Personal health data, Scoping review</p>
+          <div class="project-foot"><a class="see-pubs" href="#all-pubs" data-filter-project="accessviz">1 publication</a><p class="funding"><span class="k">Funding</span> <a href="#grants">Tulane University, NSF</a></p></div>
+        </article>
+<article class="project" id="project-civic">
+          <h3>Civic and community-engaged AI</h3>
+          <p class="leads"><a href="#saad-hassan">Saad Hassan</a></p>
+          <p class="summary">Participatory approaches to AI that connect residents, communities, and local governments, make public services easier to reach, and examine how tools such as patient-facing chatbots affect health disparities.</p>
+          <p class="keywords">Participatory design, Public services, Health equity</p>
+          <div class="project-foot"><a class="see-pubs" href="#all-pubs" data-filter-project="civic">3 publications</a><p class="funding"><span class="k">Funding</span> <a href="#grants">NSF, Tulane University</a></p></div>
+        </article>
+<article class="project" id="project-semantic">
+          <h3>Explainable projections and semantic interaction</h3>
+          <p class="leads"><a href="#rebecca-faust">Rebecca Faust</a></p>
+          <p class="summary">Methods that explain dimensionality reduction and deep learning projections, and let people steer them by moving points, grouping examples, or describing what they see in natural language.</p>
+          <p class="keywords">Dimensionality reduction, Semantic interaction, Large language models</p>
+          <div class="project-foot"><a class="see-pubs" href="#all-pubs" data-filter-project="semantic">12 publications</a><p class="funding"><span class="k">Funding</span> <a href="#grants">CRA / NSF Computing Innovation Fellows</a></p></div>
+        </article>
+<article class="project" id="project-imaging">
+          <h3>Imaging for cancer surgery and pathology</h3>
+          <p class="leads"><a href="#brian-summa">Brian Summa</a></p>
+          <p class="summary">Software that turns gigantic microscopy scans of removed tissue into fast, navigable 3D maps of tumor margins, and variable-resolution slide imaging that records how pathologists review a slide.</p>
+          <p class="keywords">MAGIC-SCAN, PathCAM, Medical image processing</p>
+          <div class="project-foot"><a class="see-pubs" href="#all-pubs" data-filter-project="imaging">11 publications</a><p class="funding"><span class="k">Funding</span> <a href="#grants">ARPA-H, NIH</a></p></div>
+        </article>
+<article class="project" id="project-reading">
+          <h3>Reading support tools</h3>
+          <p class="leads"><a href="#saad-hassan">Saad Hassan</a></p>
+          <p class="summary">Customizable text simplification and in-context reading supports for people who are deaf or hard of hearing, people with low English literacy, and other readers who face barriers with complex text.</p>
+          <p class="keywords">Text simplification, Large language models, Literature reviews</p>
+          <div class="project-foot"><a class="see-pubs" href="#all-pubs" data-filter-project="reading">2 publications</a><p class="funding"><span class="k">Funding</span> <a href="#grants">Tulane University</a></p></div>
+        </article>
+<article class="project" id="project-sign">
+          <h3>Sign language and captioning</h3>
+          <p class="leads"><a href="#saad-hassan">Saad Hassan</a></p>
+          <p class="summary">Tools that help people learn, look up, and understand American Sign Language, and richer captions that carry emotion, sound, and other non-speech information for d/Deaf and hard-of-hearing viewers.</p>
+          <p class="keywords">ASL learning, Sign lookup, Affective captions, Haptics</p>
+          <div class="project-foot"><a class="see-pubs" href="#all-pubs" data-filter-project="sign">12 publications</a><p class="funding"><span class="k">Funding</span> <a href="#grants">Tulane University, Louisiana Board of Regents, Duolingo</a></p></div>
+        </article>
+<article class="project" id="project-topology">
+          <h3>Topology, large data, and machine learning</h3>
+          <p class="leads"><a href="#brian-summa">Brian Summa</a></p>
+          <p class="summary">Topological data analysis and learning for comparing complex scalar fields, tools that read and steer the internal states of deep models such as diffusion transformers and language models, and fast access to massive simulation and image data.</p>
+          <p class="keywords">Merge trees, Model interpretability, Large scientific data</p>
+          <div class="project-foot"><a class="see-pubs" href="#all-pubs" data-filter-project="topology">14 publications</a><p class="funding"><span class="k">Funding</span> <a href="#grants">U.S. Department of Energy</a></p></div>
+        </article>
+<article class="project" id="project-scripts">
+          <h3>Visualizing data science code</h3>
+          <p class="leads"><a href="#rebecca-faust">Rebecca Faust</a></p>
+          <p class="summary">Systems that trace what an analysis script does as it runs and show the values, versions, and choices behind a result, so analysts can debug, compare, and explain their work.</p>
+          <p class="keywords">Program traces, Computational notebooks, Debugging</p>
+          <div class="project-foot"><a class="see-pubs" href="#all-pubs" data-filter-project="scripts">5 publications</a></div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== PUBLICATIONS ========================== -->
+    <section id="publications" class="block" aria-labelledby="pubs-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="pubs-title">Publications</h2>
+          <p>Group members’ names are in bold.</p>
+        </div>
+        <h3 class="sub-h">Highlighted</h3>
+        <div class="highlights">
+          <article class="hl">
+          <div class="thumb"><img src="images/papers/hassan-assets26.png" alt="" decoding="async"></div>
+          <div class="hl-text">
+            <p class="venue">ASSETS 2026</p>
+            <h3 id="hl-0"><a href="https://saadh.info/papers/hassan-assets26/hassan-assets26.pdf">A Scoping Review of Human–Computer Interaction Research on the Accessibility of Data Visualizations: New Technologies, Procedures, and Designs</a></h3>
+            <p class="authors"><b><a href="https://saadh.info/">Saad Hassan</a></b>, <a href="https://www.areenkh.com/">Areen Khalaila</a>, <a href="https://dylancashman.github.io/">Dylan Cashman</a>, <a href="https://athersharif.me/">Ather Sharif</a>, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b></p>
+            
+            <p class="links"><a href="https://saadh.info/papers/hassan-assets26/hassan-assets26.pdf" aria-describedby="hl-0">PDF</a><a href="https://accessvizcorpus.pages.dev/" aria-describedby="hl-0">Dataset</a></p>
+          </div>
+        </article>
+<article class="hl">
+          <div class="thumb placeholder" aria-hidden="true"><span>Nature Communications<br>2026</span></div>
+          <div class="hl-text">
+            <p class="venue">Nature Communications 2026</p>
+            <h3 id="hl-1">Ambient, Real-Time Digitization and Datafication of Glass Slide Microscopy towards AI-at-the-Microscope</h3>
+            <p class="authors"><b>Cooper Maira</b>, Max S. Cooper, <b>Kimberly Ashman</b>, Andrew B. Sholl, Sharon E. Fox, S. Halat, D. Manthey, et al., <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+            
+            <p class="links"></p>
+          </div>
+        </article>
+<article class="hl">
+          <div class="thumb"><img src="images/papers/hassan-chi26.png" alt="" decoding="async"></div>
+          <div class="hl-text">
+            <p class="venue">CHI 2026</p>
+            <h3 id="hl-2"><a href="https://dl.acm.org/doi/10.1145/3772318.3791928">ASL Educators’ Perspectives on AI for Enhancing Student Learning in American Sign Language Education</a></h3>
+            <p class="authors"><b><a href="https://saadh.info/">Saad Hassan</a></b>, <a href="https://www.linkedin.com/in/laleh-nourian-a88ba3129/">Laleh Nourian</a>, <a href="https://www.caluapataca.com/">Caluã de Lacerda Pataca</a>, Michelle M. Olson, Toni D’Aurio, Kanupriya Agarwal, <b><a href="https://syedamahnoorasad.github.io/">Syeda Mah Noor Asad</a></b>, <a href="https://www.garrethtigwell.com/">Garreth W. Tigwell</a>, <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfauth</a></p>
+            
+            <p class="links"><a href="https://saadh.info/papers/hassan-chi26/hassan-chi26.pdf" aria-describedby="hl-2">PDF</a><a href="https://dl.acm.org/doi/10.1145/3772318.3791928" aria-describedby="hl-2">ACM DL</a><a href="https://saadh.info/papers/hassan-chi26/slides.pdf" aria-describedby="hl-2">Slides</a><a href="https://saadh.info/papers/hassan-chi26/hassan26.bib" aria-describedby="hl-2">BibTeX</a></p>
+          </div>
+        </article>
+<article class="hl">
+          <div class="thumb"><img src="images/papers/kim-assets26.png" alt="" decoding="async"></div>
+          <div class="hl-text">
+            <p class="venue">ASSETS 2026</p>
+            <h3 id="hl-3"><a href="https://saadh.info/papers/kim-assets26/kim-assets26.pdf">Design and Evaluation of an AI-Based American Sign Language Video Comprehension Tool: Exploring the Benefits and Use of Automatic Segmentation and Sign Lookup</a></h3>
+            <p class="authors"><b><a href="https://chaelin0722.github.io/introduction/">Chaelin Kim</a></b>, <a href="https://liberalarts.tulane.edu/linguistics/people/faculty/denise-crochet">Denise Crochet</a>, <a href="https://matybohacek.com/">Maty Bohacek</a>, <b><a href="https://saadh.info/">Saad Hassan</a></b></p>
+            
+            <p class="links"><a href="https://saadh.info/papers/kim-assets26/kim-assets26.pdf" aria-describedby="hl-3">PDF</a><a href="https://github.com/chaelin0722/asl-video-lookup-tool" aria-describedby="hl-3">Code</a></p>
+          </div>
+        </article>
+<article class="hl">
+          <div class="thumb"><img src="images/papers/alonzo-assets25.png" alt="" decoding="async"></div>
+          <div class="hl-text">
+            <p class="venue">ASSETS 2025</p>
+            <h3 id="hl-4"><a href="https://dl.acm.org/doi/10.1145/3663547.3746355">A Review of 25 Years of Human-Computer Interaction Research on Reading Support Technologies for People with Disabilities Published in ACM</a></h3>
+            <p class="authors"><a href="https://oliveralonzo.com/">Oliver Alonzo<sup>*</sup></a>, <b><a href="https://saadh.info/">Saad Hassan<sup>*</sup></a></b></p>
+            <p class="award">Best Paper Nominee</p>
+            <p class="links"><a href="https://saadh.info/papers/alonzo-assets25/alonzo-assets25.pdf" aria-describedby="hl-4">PDF</a><a href="https://dl.acm.org/doi/10.1145/3663547.3746355" aria-describedby="hl-4">ACM DL</a><a href="https://saadh.info/papers/alonzo-assets25/slides.pdf" aria-describedby="hl-4">Slides</a><a href="https://docs.google.com/spreadsheets/d/1EwSAnIALGsNkIgXWYrdVWguFnPjSEM2v2l5ieRWKtR4/edit?usp=sharing" aria-describedby="hl-4">Dataset</a><a href="https://saadh.info/papers/alonzo-assets25/alonzo25.bib" aria-describedby="hl-4">BibTeX</a></p>
+          </div>
+        </article>
+<article class="hl">
+          <div class="thumb placeholder" aria-hidden="true"><span>TVCG<br>2025</span></div>
+          <div class="hl-text">
+            <p class="venue">TVCG 2025</p>
+            <h3 id="hl-5"><a href="https://doi.org/10.1109/TVCG.2024.3456395">Rapid and Precise Topological Comparison with Merge Tree Neural Networks</a></h3>
+            <p class="authors"><b><a href="https://demiqin.github.io/">Yu Qin</a></b>, Brittany Terese Fasy, <a href="https://www.cs.tulane.edu/~carola/">Carola Wenk</a>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+            
+            <p class="links"><a href="https://arxiv.org/abs/2404.05879" aria-describedby="hl-5">arXiv</a><a href="https://doi.org/10.1109/TVCG.2024.3456395" aria-describedby="hl-5">DOI</a></p>
+          </div>
+        </article>
+<article class="hl">
+          <div class="thumb placeholder" aria-hidden="true"><span>TVCG<br>2025</span></div>
+          <div class="hl-text">
+            <p class="venue">TVCG 2025</p>
+            <h3 id="hl-6"><a href="https://doi.org/10.1109/TVCG.2024.3456143">Visualizing Temporal Topic Embeddings with a Compass</a></h3>
+            <p class="authors">Daniel Palamarchuk, L. Williams, B. Mayer, T. Danielson, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b>, L. Deschaine, <a href="https://people.cs.vt.edu/north/">Chris North</a></p>
+            
+            <p class="links"><a href="https://doi.org/10.1109/TVCG.2024.3456143" aria-describedby="hl-6">DOI</a></p>
+          </div>
+        </article>
+<article class="hl">
+          <div class="thumb"><img src="images/papers/faust-vds23.png" alt="" decoding="async"></div>
+          <div class="hl-text">
+            <p class="venue">VDS 2023</p>
+            <h3 id="hl-7"><a href="https://doi.org/10.1109/VDS60365.2023.00009">Aardvark: Comparative Visualization of Data Analysis Scripts</a></h3>
+            <p class="authors"><b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b>, Carlos Scheidegger, <a href="https://people.cs.vt.edu/north/">Chris North</a></p>
+            
+            <p class="links"><a href="https://doi.org/10.1109/VDS60365.2023.00009" aria-describedby="hl-7">DOI</a><a href="https://rjfaust.github.io/publication/2023-Aardvark" aria-describedby="hl-7">Project page</a></p>
+          </div>
+        </article>
+        </div>
+
+        <div class="all-pubs" id="all-pubs">
+          <h3 class="sub-h">All publications <span class="count">63</span></h3>
+          <div class="filters">
+            <label class="select" for="lead-filter">
+              <span>Co-director</span>
+              <select id="lead-filter">
+                <option value="">All co-directors (63)</option><option value="faust">Rebecca Faust (18)</option><option value="hassan">Saad Hassan (21)</option><option value="summa">Brian Summa (25)</option>
+              </select>
+            </label>
+            <label class="select" for="project-filter">
+              <span>Area</span>
+              <select id="project-filter">
+                <option value="">All areas (63)</option><option value="accessviz">Accessible visualization (1)</option><option value="civic">Civic AI (3)</option><option value="scripts">Data science code (5)</option><option value="semantic">Explainable projections (12)</option><option value="imaging">Pathology and surgical imaging (11)</option><option value="reading">Reading support (2)</option><option value="sign">Sign language and captions (12)</option><option value="topology">Topology, data, and ML (14)</option>
+              </select>
+            </label>
+          </div>
+          <p class="filter-status" id="filter-status" aria-live="polite"></p>
+          <ol class="years" id="pub-list">
+            <li class="year" data-year="2026"><h3>2026</h3><ol class="pubs">
+<li class="pub" data-lead="hassan faust" data-project="accessviz">
+              <p class="title" id="pub-1"><a href="https://saadh.info/papers/hassan-assets26/hassan-assets26.pdf">A Scoping Review of Human–Computer Interaction Research on the Accessibility of Data Visualizations: New Technologies, Procedures, and Designs</a></p>
+              <p class="authors"><b><a href="https://saadh.info/">Saad Hassan</a></b>, <a href="https://www.areenkh.com/">Areen Khalaila</a>, <a href="https://dylancashman.github.io/">Dylan Cashman</a>, <a href="https://athersharif.me/">Ather Sharif</a>, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b></p>
+              <p class="meta"><span class="venue">ASSETS 2026</span></p>
+              <p class="links"><a href="https://saadh.info/papers/hassan-assets26/hassan-assets26.pdf" aria-describedby="pub-1">PDF</a><a href="https://accessvizcorpus.pages.dev/" aria-describedby="pub-1">Dataset</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="topology">
+              <p class="title" id="pub-2"><a href="https://arxiv.org/abs/2608.21736">Adaptive Multilevel Twisted Sequential Monte Carlo for Rare Events Estimation in Language Models</a></p>
+              <p class="authors">Zixuan Liu, <b><a href="https://scholar.google.com/citations?user=syojgz0AAAAJ">Fangzheng Wu</a></b>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b>, Zizhan Zheng</p>
+              <p class="meta"><span class="venue">arXiv 2026 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2608.21736" aria-describedby="pub-2">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="civic">
+              <p class="title" id="pub-3"><a href="https://books.google.com/books/about/De_Gruyter_Handbook_of_Disruptive_Urban.html?id=xc8O0gEACAAJ">AI in the Public Sphere: Citizen Engagement and Governance</a></p>
+              <p class="authors"><b><a href="https://saadh.info/">Saad Hassan</a></b>, <a href="https://www.motahhare.com/">Motahhare Eslami</a>, <a href="https://www.nicholasmattei.net/">Nicholas Mattei</a>, <a href="https://www.cs.tulane.edu/~aculotta/">Aron Culotta</a>, <a href="https://www.cs.cmu.edu/~johnz/">John Zimmerman</a></p>
+              <p class="meta"><span class="venue">De Gruyter 2026 book chapter</span></p>
+              <p class="links"><a href="https://books.google.com/books/about/De_Gruyter_Handbook_of_Disruptive_Urban.html?id=xc8O0gEACAAJ" aria-describedby="pub-3">Publisher</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="imaging">
+              <p class="title" id="pub-4">AI-Enhanced PathCAM Microscopy for Rapid Low-Magnification Detection of Tuberculosis in Sputum Swabs</p>
+              <p class="authors">Max S. Cooper, <b>Cooper Maira</b>, <b>Kimberly Ashman</b>, Andrew B. Sholl, Sharon E. Fox, <a href="https://www.cs.tulane.edu/~carola/">Carola Wenk</a>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b>, et al.</p>
+              <p class="meta"><span class="venue">SPIE 2026 short paper</span></p>
+              <p class="links"></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="imaging">
+              <p class="title" id="pub-5">Ambient, Real-Time Digitization and Datafication of Glass Slide Microscopy towards AI-at-the-Microscope</p>
+              <p class="authors"><b>Cooper Maira</b>, Max S. Cooper, <b>Kimberly Ashman</b>, Andrew B. Sholl, Sharon E. Fox, S. Halat, D. Manthey, et al., <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+              <p class="meta"><span class="venue">Nature Communications 2026</span></p>
+              <p class="links"></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="sign">
+              <p class="title" id="pub-6"><a href="https://dl.acm.org/doi/10.1145/3772318.3791928">ASL Educators’ Perspectives on AI for Enhancing Student Learning in American Sign Language Education</a></p>
+              <p class="authors"><b><a href="https://saadh.info/">Saad Hassan</a></b>, <a href="https://www.linkedin.com/in/laleh-nourian-a88ba3129/">Laleh Nourian</a>, <a href="https://www.caluapataca.com/">Caluã de Lacerda Pataca</a>, Michelle M. Olson, Toni D’Aurio, Kanupriya Agarwal, <b><a href="https://syedamahnoorasad.github.io/">Syeda Mah Noor Asad</a></b>, <a href="https://www.garrethtigwell.com/">Garreth W. Tigwell</a>, <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfauth</a></p>
+              <p class="meta"><span class="venue">CHI 2026</span></p>
+              <p class="links"><a href="https://saadh.info/papers/hassan-chi26/hassan-chi26.pdf" aria-describedby="pub-6">PDF</a><a href="https://dl.acm.org/doi/10.1145/3772318.3791928" aria-describedby="pub-6">ACM DL</a><a href="https://saadh.info/papers/hassan-chi26/slides.pdf" aria-describedby="pub-6">Slides</a><a href="https://saadh.info/papers/hassan-chi26/hassan26.bib" aria-describedby="pub-6">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="topology">
+              <p class="title" id="pub-7"><a href="https://arxiv.org/abs/2605.09313">Attention Sinks in Diffusion Transformers: A Causal Analysis</a></p>
+              <p class="authors"><b><a href="https://scholar.google.com/citations?user=syojgz0AAAAJ">Fangzheng Wu</a></b>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+              <p class="meta"><span class="venue">arXiv 2026 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2605.09313" aria-describedby="pub-7">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="semantic">
+              <p class="title" id="pub-8"><a href="https://arxiv.org/abs/2606.28081">Context-Aware Explanations for Spatialized Document Layouts</a></p>
+              <p class="authors">Wei Liu, John Wenskovitch, <a href="https://people.cs.vt.edu/north/">Chris North</a>, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b></p>
+              <p class="meta"><span class="venue">arXiv 2026 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2606.28081" aria-describedby="pub-8">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="scripts">
+              <p class="title" id="pub-9"><a href="https://arxiv.org/abs/2606.30884">Debugging as Evidence-Driven Reasoning: Visualization Opportunities in Data-Intensive Programming</a></p>
+              <p class="authors"><b><a href="https://cybersakura.github.io/">Yongbo Chen</a></b>, <b><a href="https://www.thesupercarry.com/">Yan Zhu</a></b>, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b></p>
+              <p class="meta"><span class="venue">arXiv 2026 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2606.30884" aria-describedby="pub-9">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="sign">
+              <p class="title" id="pub-10"><a href="https://saadh.info/papers/kim-assets26/kim-assets26.pdf">Design and Evaluation of an AI-Based American Sign Language Video Comprehension Tool: Exploring the Benefits and Use of Automatic Segmentation and Sign Lookup</a></p>
+              <p class="authors"><b><a href="https://chaelin0722.github.io/introduction/">Chaelin Kim</a></b>, <a href="https://liberalarts.tulane.edu/linguistics/people/faculty/denise-crochet">Denise Crochet</a>, <a href="https://matybohacek.com/">Maty Bohacek</a>, <b><a href="https://saadh.info/">Saad Hassan</a></b></p>
+              <p class="meta"><span class="venue">ASSETS 2026</span></p>
+              <p class="links"><a href="https://saadh.info/papers/kim-assets26/kim-assets26.pdf" aria-describedby="pub-10">PDF</a><a href="https://github.com/chaelin0722/asl-video-lookup-tool" aria-describedby="pub-10">Code</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="imaging">
+              <p class="title" id="pub-11">Extreme-Throughput Multimodal Optical-Sectioning Structured Illumination Microscopy for Large-Area Imaging</p>
+              <p class="authors">I. Bozic, C. W. Simmons, D. A. Lucia, R. C. Todaro, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b>, P. Kner, J. Quincy Brown</p>
+              <p class="meta"><span class="venue">SPIE 2026 short paper</span></p>
+              <p class="links"></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="imaging">
+              <p class="title" id="pub-12">Fresh Surface and Cross-Sectional Slice Imaging with SIM for Prostate Tumor Margin Detection</p>
+              <p class="authors">I. Bozic, G. J. Kobza, L. E. Boudreaux, D. A. Lucia, <b><a href="https://www.linkedin.com/in/eribandogros/">Emily Ribando-Gros</a></b>, <b>Kimberly Ashman</b>, et al., <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+              <p class="meta"><span class="venue">Optica MHA 2026 abstract</span></p>
+              <p class="links"></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="semantic">
+              <p class="title" id="pub-13"><a href="https://arxiv.org/abs/2607.20556">KeySI: An Interaction Framework for Tuning Text Embeddings Based on Human Feedback</a></p>
+              <p class="authors"><b><a href="https://www.thesupercarry.com/">Yan Zhu</a></b>, <b><a href="https://cybersakura.github.io/">Yongbo Chen</a></b>, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b></p>
+              <p class="meta"><span class="venue">arXiv 2026 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2607.20556" aria-describedby="pub-13">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="semantic">
+              <p class="title" id="pub-14">LLM-Augmented Semantic Steering of Text Embedding Projection Spaces</p>
+              <p class="authors">Wei Liu, Eric Krokos, Kirsten Whitley, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b>, <a href="https://people.cs.vt.edu/north/">Chris North</a></p>
+              <p class="meta"><span class="venue">AVI 2026</span></p>
+              <p class="links"></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="topology">
+              <p class="title" id="pub-15"><a href="https://arxiv.org/abs/2601.16874">Model-Centric Diagnostics: A Framework for Internal State Readouts</a></p>
+              <p class="authors"><b><a href="https://scholar.google.com/citations?user=syojgz0AAAAJ">Fangzheng Wu</a></b>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+              <p class="meta"><span class="venue">arXiv 2026 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2601.16874" aria-describedby="pub-15">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="imaging">
+              <p class="title" id="pub-16"><a href="https://arxiv.org/abs/2604.12100">PC-MIL: Decoupling Feature Resolution from Supervision Scale in Whole-Slide Learning</a></p>
+              <p class="authors">Syed Fahim Ahmed, Gnanesh Rasineni, Florian Koehler, Abu Zahid Bin Aziz, M. Wang, Attila Gyulassy, et al., <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+              <p class="meta"><span class="venue">arXiv 2026 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2604.12100" aria-describedby="pub-16">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="semantic">
+              <p class="title" id="pub-17"><a href="https://arxiv.org/abs/2609.16284">ProtoLIP: From Sentence-Level to Object-Level Evidence Disentanglement</a></p>
+              <p class="authors"><b><a href="https://www.thesupercarry.com/">Yan Zhu</a></b>, <b><a href="https://cybersakura.github.io/">Yongbo Chen</a></b>, Zhengming Ding, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b></p>
+              <p class="meta"><span class="venue">arXiv 2026 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2609.16284" aria-describedby="pub-17">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="civic">
+              <p class="title" id="pub-18"><a href="https://saadh.info/papers/allouch-ajpc26/allouch-ajpc26.pdf">Reducing hypertension disparities: The potential role of patient-facing large language models</a></p>
+              <p class="authors">Farah Allouch, <b><a href="https://saadh.info/">Saad Hassan</a></b>, Flor Alvarado, <b><a href="https://syedamahnoorasad.github.io/">Syeda Mah Noor Asad</a></b>, Dee Parekh, Renata Johnson, Marilyn Payne, David Gardner, <a href="https://www.nicholasmattei.net/">Nicholas Mattei</a>, Keith C. Ferdinand</p>
+              <p class="meta"><span class="venue">AJPC 2026 commentary</span></p>
+              <p class="links"><a href="https://saadh.info/papers/allouch-ajpc26/allouch-ajpc26.pdf" aria-describedby="pub-18">PDF</a><a href="https://www.sciencedirect.com/science/article/pii/S2666667726003879" aria-describedby="pub-18">ScienceDirect</a><a href="https://saadh.info/papers/allouch-ajpc26/allouch26.bib" aria-describedby="pub-18">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="topology">
+              <p class="title" id="pub-19"><a href="https://arxiv.org/abs/2609.08064">Risk-Conditioned Fine-Tuning of Large Language Models</a></p>
+              <p class="authors">Zixuan Liu, <b><a href="https://scholar.google.com/citations?user=syojgz0AAAAJ">Fangzheng Wu</a></b>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b>, Zizhan Zheng</p>
+              <p class="meta"><span class="venue">arXiv 2026 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2609.08064" aria-describedby="pub-19">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="topology">
+              <p class="title" id="pub-20"><a href="https://arxiv.org/abs/2608.03562">Robust General Utility for Reinforcement Learning</a></p>
+              <p class="authors">Zixuan Liu, <b><a href="https://scholar.google.com/citations?user=syojgz0AAAAJ">Fangzheng Wu</a></b>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b>, Zizhan Zheng</p>
+              <p class="meta"><span class="venue">arXiv 2026 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2608.03562" aria-describedby="pub-20">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="semantic">
+              <p class="title" id="pub-21"><a href="https://arxiv.org/abs/2607.03978">Scalable Semantic Steering of Embedding Projections</a></p>
+              <p class="authors">Wei Liu, Eric Krokos, Kirsten Whitley, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b>, <a href="https://people.cs.vt.edu/north/">Chris North</a></p>
+              <p class="meta"><span class="venue">arXiv 2026 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2607.03978" aria-describedby="pub-21">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="semantic">
+              <p class="title" id="pub-22"><a href="https://arxiv.org/abs/2607.28853">Spatial Visual Analytics for Multi-Document Summary Verification</a></p>
+              <p class="authors">Jiahao Xu, Wei Liu, Yang Liu, Eric Krokos, Kirsten Whitley, Xuan Wang, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b>, <a href="https://people.cs.vt.edu/north/">Chris North</a></p>
+              <p class="meta"><span class="venue">IEEE VIS 2026</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2607.28853" aria-describedby="pub-22">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="topology">
+              <p class="title" id="pub-23"><a href="https://arxiv.org/abs/2605.01653">SteeringDiffusion: A Bottlenecked Activation Control Interface for Diffusion Models</a></p>
+              <p class="authors"><b><a href="https://scholar.google.com/citations?user=syojgz0AAAAJ">Fangzheng Wu</a></b>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+              <p class="meta"><span class="venue">arXiv 2026 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2605.01653" aria-describedby="pub-23">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="sign">
+              <p class="title" id="pub-24"><a href="https://saadh.info/papers/kim-assets26-2/kim-assets26-demo.pdf">Supporting Sign Language Video Comprehension through In-Situ Automatic Segmentation and Sign Lookup Tool</a></p>
+              <p class="authors"><b><a href="https://chaelin0722.github.io/introduction/">Chaelin Kim</a></b>, <b><a href="https://saadh.info/">Saad Hassan</a></b></p>
+              <p class="meta"><span class="venue">ASSETS 2026 demo</span></p>
+              <p class="links"><a href="https://saadh.info/papers/kim-assets26-2/kim-assets26-demo.pdf" aria-describedby="pub-24">PDF</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="imaging">
+              <p class="title" id="pub-25">System and Method for Real-Time Variable Resolution Microscope Slide Imaging</p>
+              <p class="authors"><b>Kimberly Ashman</b>, J. Quincy Brown, <b><a href="https://sites.google.com/site/codylicorish/">Cody Licorish</a></b>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b>, <a href="https://www.cs.tulane.edu/~carola/">Carola Wenk</a>, <b>Huimin Zhuge</b>, et al.</p>
+              <p class="meta"><span class="venue">US Patent App. 2026 patent</span></p>
+              <p class="links"><a href="https://patents.google.com/?q=19%2F375%2C404" aria-describedby="pub-25">Application 19/375,404 (2026)</a><a href="https://patents.google.com/?q=18%2F279%2C171" aria-describedby="pub-25">Application 18/279,171 (2024)</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="topology">
+              <p class="title" id="pub-26"><a href="https://arxiv.org/abs/2610.03068">Where to Look Is Not How to Fix: Pre-Denoising Diagnostics and Modality-Dependent Control in Diffusion Composition</a></p>
+              <p class="authors"><b><a href="https://scholar.google.com/citations?user=syojgz0AAAAJ">Fangzheng Wu</a></b>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+              <p class="meta"><span class="venue">arXiv 2026 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2610.03068" aria-describedby="pub-26">arXiv</a></p>
+            </li>
+</ol></li>
+<li class="year" data-year="2025"><h3>2025</h3><ol class="pubs">
+<li class="pub" data-lead="hassan" data-project="reading">
+              <p class="title" id="pub-27"><a href="https://dl.acm.org/doi/10.1145/3663547.3759713">A Customizable AI-Powered Automatic Text Simplification Tool for Supporting In-Situ Text Comprehension</a></p>
+              <p class="authors"><b><a href="https://tithi-khan.github.io/">Nazmun Nahar Khanom</a></b>, <b><a href="https://www.linkedin.com/in/aaron-gershkovich">Aaron Gershkovich</a></b>, <a href="https://oliveralonzo.com/">Oliver Alonzo</a>, <b><a href="https://saadh.info/">Saad Hassan</a></b></p>
+              <p class="meta"><span class="venue">ASSETS 2025 demo</span></p>
+              <p class="links"><a href="https://saadh.info/papers/khanom-assets25/khanom-assets25.pdf" aria-describedby="pub-27">PDF</a><a href="https://dl.acm.org/doi/10.1145/3663547.3759713" aria-describedby="pub-27">ACM DL</a><a href="https://github.com/TITHI-KHAN/ATS-GPT" aria-describedby="pub-27">Code</a><a href="https://saadh.info/papers/khanom-assets25/poster.pdf" aria-describedby="pub-27">Poster</a><a href="https://saadh.info/papers/khanom-assets25/khanom25.bib" aria-describedby="pub-27">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="reading">
+              <p class="title" id="pub-28"><a href="https://dl.acm.org/doi/10.1145/3663547.3746355">A Review of 25 Years of Human-Computer Interaction Research on Reading Support Technologies for People with Disabilities Published in ACM</a></p>
+              <p class="authors"><a href="https://oliveralonzo.com/">Oliver Alonzo<sup>*</sup></a>, <b><a href="https://saadh.info/">Saad Hassan<sup>*</sup></a></b></p>
+              <p class="meta"><span class="venue">ASSETS 2025</span> <span class="award">Best Paper Nominee</span></p>
+              <p class="links"><a href="https://saadh.info/papers/alonzo-assets25/alonzo-assets25.pdf" aria-describedby="pub-28">PDF</a><a href="https://dl.acm.org/doi/10.1145/3663547.3746355" aria-describedby="pub-28">ACM DL</a><a href="https://saadh.info/papers/alonzo-assets25/slides.pdf" aria-describedby="pub-28">Slides</a><a href="https://docs.google.com/spreadsheets/d/1EwSAnIALGsNkIgXWYrdVWguFnPjSEM2v2l5ieRWKtR4/edit?usp=sharing" aria-describedby="pub-28">Dataset</a><a href="https://saadh.info/papers/alonzo-assets25/alonzo25.bib" aria-describedby="pub-28">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="sign">
+              <p class="title" id="pub-29"><a href="https://openaccess.thecvf.com/content/CVPR2025/html/Georg_FSboard_Over_3_Million_Characters_of_ASL_Fingerspelling_Collected_via_CVPR_2025_paper.html">FSboard: Over 3 Million Characters of ASL Fingerspelling Collected via Smartphones</a></p>
+              <p class="authors"><a href="https://www.linkedin.com/in/mgeorg/">Manfred Georg</a>, <a href="https://scholar.google.com/citations?user=Wg58ZR4AAAAJ">Garrett Tanzer</a>, <a href="https://github.com/eknight7">Esha Uboweja</a>, <b><a href="https://saadh.info/">Saad Hassan</a></b>, Maximus Shengelia, <a href="https://www.linkedin.com/in/samsepah/">Sam Sepah</a>, <a href="https://www.deafandloud.com/">Sean Forbes</a>, <a href="https://sites.cc.gatech.edu/home/thad/">Thad Starner</a></p>
+              <p class="meta"><span class="venue">CVPR 2025</span></p>
+              <p class="links"><a href="https://saadh.info/papers/georg-cvpr25/georg-cvpr25.pdf" aria-describedby="pub-29">PDF</a><a href="https://openaccess.thecvf.com/content/CVPR2025/html/Georg_FSboard_Over_3_Million_Characters_of_ASL_Fingerspelling_Collected_via_CVPR_2025_paper.html" aria-describedby="pub-29">CVF</a><a href="https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202025/33621.png?t=1748855109.234652" aria-describedby="pub-29">Poster</a><a href="https://www.youtube.com/watch?v=a8pEg6NPGvM" aria-describedby="pub-29">Video</a><a href="https://www.kaggle.com/datasets/googleai/fsboard" aria-describedby="pub-29">Dataset</a><a href="https://ieeexplore.ieee.org/document/11094022/" aria-describedby="pub-29">IEEE Xplore</a><a href="https://saadh.info/papers/georg-cvpr25/georg25.bib" aria-describedby="pub-29">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="">
+              <p class="title" id="pub-30"><a href="https://dl.acm.org/doi/10.1145/3663547.3748639">Participant Recruitment in Accessibility Research</a></p>
+              <p class="authors"><a href="https://www.lloydmay.net/">Lloyd May</a>, <b><a href="https://saadh.info/">Saad Hassan</a></b>, <a href="https://www.khang4dang.net/">Khang Dang</a>, <a href="https://people.njit.edu/profile/sl287">Sooyeon Lee</a>, <a href="https://oliveralonzo.com/">Oliver Alonzo</a></p>
+              <p class="meta"><span class="venue">ASSETS 2025 workshop proposal</span></p>
+              <p class="links"><a href="https://saadh.info/papers/may-assets25/may-assets25.pdf" aria-describedby="pub-30">PDF</a><a href="https://dl.acm.org/doi/10.1145/3663547.3748639" aria-describedby="pub-30">ACM DL</a><a href="https://docs.google.com/presentation/d/1KwvQdauKkiNEMZx5lLo_i0b1-VsL_U9LcFBjbFGVpiI/edit?usp=drivesdk" aria-describedby="pub-30">Slides</a><a href="https://assets-recruitment-2025.github.io/" aria-describedby="pub-30">Project page</a><a href="https://saadh.info/papers/may-assets25/may25.bib" aria-describedby="pub-30">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="topology">
+              <p class="title" id="pub-31"><a href="https://doi.org/10.1109/TVCG.2024.3456395">Rapid and Precise Topological Comparison with Merge Tree Neural Networks</a></p>
+              <p class="authors"><b><a href="https://demiqin.github.io/">Yu Qin</a></b>, Brittany Terese Fasy, <a href="https://www.cs.tulane.edu/~carola/">Carola Wenk</a>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+              <p class="meta"><span class="venue">TVCG 2025</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2404.05879" aria-describedby="pub-31">arXiv</a><a href="https://doi.org/10.1109/TVCG.2024.3456395" aria-describedby="pub-31">DOI</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="imaging">
+              <p class="title" id="pub-32">Real-Time Multiresolution Digitization and Computational Analysis of Pathology Slides for Closed-Loop Hybrid Analog-Digital Clinical Pathology Review</p>
+              <p class="authors">Max S. Cooper, <b>Cooper Maira</b>, <b>Kimberly Ashman</b>, S. Halat, Andrew B. Sholl, <a href="https://www.cs.tulane.edu/~carola/">Carola Wenk</a>, Sharon E. Fox, et al., <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+              <p class="meta"><span class="venue">SPIE 2025 abstract</span></p>
+              <p class="links"></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="sign">
+              <p class="title" id="pub-33"><a href="https://dl.acm.org/doi/10.1145/3663547.3759746">Signing for Care: A Demo and Initial Evaluation of an American Sign Language Learning Tool for Emergency Medical Service Providers</a></p>
+              <p class="authors"><b><a href="https://chaelin0722.github.io/introduction/">Chaelin Kim</a></b>, <b>Cameron McLaren</b>, <b><a href="https://www.linkedin.com/in/madhangikrishnan">Madhangi Krishnan</a></b>, <b><a href="https://www.linkedin.com/in/nikhil-modayur">Nikhil Modayur</a></b>, <b><a href="https://saadh.info/">Saad Hassan</a></b></p>
+              <p class="meta"><span class="venue">ASSETS 2025 demo</span></p>
+              <p class="links"><a href="https://saadh.info/papers/kim-assets25/kim-assets25.pdf" aria-describedby="pub-33">PDF</a><a href="https://dl.acm.org/doi/10.1145/3663547.3759746" aria-describedby="pub-33">ACM DL</a><a href="https://github.com/chaelin0722/ASL-emergency" aria-describedby="pub-33">Code</a><a href="https://saadh.info/papers/kim-assets25/poster.pdf" aria-describedby="pub-33">Poster</a><a href="https://saadh.info/papers/kim-assets25/kim25.bib" aria-describedby="pub-33">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="sign">
+              <p class="title" id="pub-34"><a href="https://dl.acm.org/doi/10.1145/3706598.3713304">Tactile Emotions: Multimodal Affective Captioning with Haptics Improves Narrative Engagement for d/Deaf and Hard-of-Hearing Viewers</a></p>
+              <p class="authors"><a href="https://www.caluapataca.com/">Caluã de Lacerda Pataca</a>, <b><a href="https://saadh.info/">Saad Hassan</a></b>, <a href="https://www.lloydmay.net/">Lloyd May</a>, Michelle M. Olson, Toni D’Aurio, <a href="https://www.rit.edu/directory/rxpics-roshan-peiris">Roshan L. Peiris</a>, <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfauth</a></p>
+              <p class="meta"><span class="venue">CHI 2025</span></p>
+              <p class="links"><a href="https://saadh.info/papers/pataca-chi-25/pataca-chi25.pdf" aria-describedby="pub-34">PDF</a><a href="https://dl.acm.org/doi/10.1145/3706598.3713304" aria-describedby="pub-34">ACM DL</a><a href="https://saadh.info/papers/pataca-chi-25/pataca-chi25-slides-compressed.pdf" aria-describedby="pub-34">Slides</a><a href="https://www.youtube.com/watch?v=Bz_qZBOHw5U" aria-describedby="pub-34">Video</a><a href="https://saadh.info/papers/pataca-chi-25/pataca25.bib" aria-describedby="pub-34">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="sign">
+              <p class="title" id="pub-35"><a href="https://dl.acm.org/doi/10.1145/3744257.3744258">Towards an AI-Driven Video-Based American Sign Language Dictionary: Exploring Design and Usage Experience with Learners</a></p>
+              <p class="authors"><b><a href="https://saadh.info/">Saad Hassan</a></b>, <a href="https://matybohacek.com/">Matyas Bohacek</a>, <b><a href="https://chaelin0722.github.io/introduction/">Chaelin Kim</a></b>, <a href="https://liberalarts.tulane.edu/linguistics/people/faculty/denise-crochet">Denise Crochet</a></p>
+              <p class="meta"><span class="venue">W4A 2025</span></p>
+              <p class="links"><a href="https://saadh.info/papers/hassan-w4a25/hassan-w4a-25.pdf" aria-describedby="pub-35">PDF</a><a href="https://dl.acm.org/doi/10.1145/3744257.3744258" aria-describedby="pub-35">ACM DL</a><a href="https://github.com/maty-bohacek/sign-language-dictionary" aria-describedby="pub-35">Code</a><a href="https://saadh.info/papers/hassan-w4a25/hassan-w4a-25-slides.pdf" aria-describedby="pub-35">Slides</a><a href="https://saadh.info/papers/hassan-w4a25/hassan25.bib" aria-describedby="pub-35">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="semantic">
+              <p class="title" id="pub-36"><a href="https://doi.org/10.1109/TVCG.2024.3456143">Visualizing Temporal Topic Embeddings with a Compass</a></p>
+              <p class="authors">Daniel Palamarchuk, L. Williams, B. Mayer, T. Danielson, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b>, L. Deschaine, <a href="https://people.cs.vt.edu/north/">Chris North</a></p>
+              <p class="meta"><span class="venue">TVCG 2025</span></p>
+              <p class="links"><a href="https://doi.org/10.1109/TVCG.2024.3456143" aria-describedby="pub-36">DOI</a></p>
+            </li>
+</ol></li>
+<li class="year" data-year="2024"><h3>2024</h3><ol class="pubs">
+<li class="pub" data-lead="hassan" data-project="sign">
+              <p class="title" id="pub-37"><a href="https://dl.acm.org/doi/10.1145/3613904.3642258">Caption Royale: Exploring the Design Space of Affective Captions from the Perspective of Deaf and Hard-of-Hearing Individuals</a></p>
+              <p class="authors"><a href="https://www.caluapataca.com/">Caluã de Lacerda Pataca</a>, <b><a href="https://saadh.info/">Saad Hassan</a></b>, Nathan Tinker, <a href="https://www.rit.edu/directory/rxpics-roshan-peiris">Roshan Lalintha Peiris</a>, <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfauth</a></p>
+              <p class="meta"><span class="venue">CHI 2024</span> <span class="award">Best Paper Honorable Mention</span></p>
+              <p class="links"><a href="https://saadh.info/papers/pataca-chi24/pataca-chi24.pdf" aria-describedby="pub-37">PDF</a><a href="https://dl.acm.org/doi/10.1145/3613904.3642258" aria-describedby="pub-37">ACM DL</a><a href="https://saadh.info/papers/pataca-chi24/slides.pdf" aria-describedby="pub-37">Slides</a><a href="https://www.youtube.com/watch?v=zVfec86Oaf4&amp;t=2s" aria-describedby="pub-37">Video</a><a href="https://saadh.info/papers/pataca-chi24/pataca24.bib" aria-describedby="pub-37">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="">
+              <p class="title" id="pub-38"><a href="https://dl.acm.org/doi/10.1145/3613904.3642710">Designing and Evaluating an Advanced Dance Video Comprehension Tool with In-situ Move Identification Capabilities</a></p>
+              <p class="authors"><b><a href="https://saadh.info/">Saad Hassan</a></b>, <a href="https://www.caluapataca.com/">Caluã de Lacerda Pataca</a>, <a href="https://www.linkedin.com/in/laleh-nourian-a88ba3129/">Laleh Nourian</a>, <a href="https://www.garrethtigwell.com/">Garreth W. Tigwell</a>, Briana Davis, <a href="https://www.linkedin.com/in/will-silver-wagman/">Will Zhenya Silver Wagman</a></p>
+              <p class="meta"><span class="venue">CHI 2024</span> <span class="award">Best Paper Honorable Mention</span></p>
+              <p class="links"><a href="https://saadh.info/papers/hassan-chi24/hassan-chi24.pdf" aria-describedby="pub-38">PDF</a><a href="https://dl.acm.org/doi/10.1145/3613904.3642710" aria-describedby="pub-38">ACM DL</a><a href="https://saadh.info/papers/hassan-chi24/slides.pdf" aria-describedby="pub-38">Slides</a><a href="https://www.youtube.com/watch?v=etSQo4Aj6ow" aria-describedby="pub-38">Video</a><a href="https://dl.acm.org/doi/10.1145/3613904.3642710#supplementary-materials" aria-describedby="pub-38">Video 2</a><a href="https://saadh.info/papers/hassan-chi24/hassan24.bib" aria-describedby="pub-38">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="sign">
+              <p class="title" id="pub-39"><a href="https://dl.acm.org/doi/10.1145/3690647">Exploring the Benefits and Applications of Video-Span Selection and Search for Real-Time Support in Sign Language Video Comprehension among ASL Learners</a></p>
+              <p class="authors"><b><a href="https://saadh.info/">Saad Hassan</a></b>, <a href="https://www.caluapataca.com/">Caluã de Lacerda Pataca</a>, <a href="https://akhteramin.github.io/">Akhter Al Amin</a>, <a href="https://www.linkedin.com/in/laleh-nourian-a88ba3129/">Laleh Nourian</a>, <a href="https://www.linkedin.com/in/diego-navarro-306b9a229/">Diego Navarro</a>, <a href="https://people.njit.edu/profile/sl287">Sooyeon Lee</a>, Alexis Gordon, Matthew Watkins, <a href="https://www.garrethtigwell.com/">Garreth W. Tigwell</a>, <a href="https://huenerfauth.ist.rit.edu/">Matt Huenerfauth</a></p>
+              <p class="meta"><span class="venue">TACCESS 2024</span></p>
+              <p class="links"><a href="https://saadh.info/papers/hassan-taccess-24/hassan-taccess-24.pdf" aria-describedby="pub-39">PDF</a><a href="https://dl.acm.org/doi/10.1145/3690647" aria-describedby="pub-39">ACM DL</a><a href="https://dl.acm.org/doi/10.1145/3690647#supplementary-materials" aria-describedby="pub-39">Supplement</a><a href="https://saadh.info/papers/hassan-taccess-24/hassan24.bib" aria-describedby="pub-39">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="">
+              <p class="title" id="pub-40"><a href="https://dl.acm.org/doi/10.1145/3663548.3688527">Exploring the “Freedom to be Me” through Design Sprints with Neurodivergent Scholars</a></p>
+              <p class="authors"><a href="https://www.chapman.edu/our-faculty/louanne-boyd">LouAnne Boyd</a>, <a href="http://faculty.washington.edu/annuska/">Annuska Zolyomi</a>, <b><a href="https://saadh.info/">Saad Hassan</a></b>, <a href="https://seray-i.github.io/">Seray B. Ibrahim</a>, <a href="https://www.linkedin.com/in/guande-wu-776486124/">Guande Wu</a>, Kay Kender</p>
+              <p class="meta"><span class="venue">ASSETS 2024 short paper</span></p>
+              <p class="links"><a href="https://saadh.info/papers/boyd-assets24/boyd-assets24.pdf" aria-describedby="pub-40">PDF</a><a href="https://dl.acm.org/doi/10.1145/3663548.3688527" aria-describedby="pub-40">ACM DL</a><a href="https://saadh.info/papers/boyd-assets24/boyd-assets24-slides.pdf" aria-describedby="pub-40">Poster</a><a href="https://saadh.info/papers/boyd-assets24/boyd24.bib" aria-describedby="pub-40">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="scripts">
+              <p class="title" id="pub-41"><a href="https://doi.org/10.1145/3613905.3636318">Human-Notebook Interactions: The CHI of Computational Notebooks</a></p>
+              <p class="authors">Jesse Harden, April Yi Wang, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b>, Katherine E. Isaacs, Nurit Kirshenbaum, John Wenskovitch, Jian Zhao, <a href="https://people.cs.vt.edu/north/">Chris North</a></p>
+              <p class="meta"><span class="venue">CHI EA 2024 workshop proposal</span></p>
+              <p class="links"><a href="https://doi.org/10.1145/3613905.3636318" aria-describedby="pub-41">DOI</a></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="semantic">
+              <p class="title" id="pub-42"><a href="https://doi.org/10.1109/VIS55277.2024.00026">ImageSI: Semantic Interaction for Deep Learning Image Projections</a></p>
+              <p class="authors">Jiayue Lin, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b>, <a href="https://people.cs.vt.edu/north/">Chris North</a></p>
+              <p class="meta"><span class="venue">IEEE VIS 2024 short paper</span></p>
+              <p class="links"><a href="https://doi.org/10.1109/VIS55277.2024.00026" aria-describedby="pub-42">DOI</a></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="semantic">
+              <p class="title" id="pub-43"><a href="https://arxiv.org/abs/2402.17178">NeuralSI: Neural Design of Semantic Interaction for Interactive Deep Learning</a></p>
+              <p class="authors">Yali Bian, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b>, <a href="https://people.cs.vt.edu/north/">Chris North</a></p>
+              <p class="meta"><span class="venue">arXiv 2024 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2402.17178" aria-describedby="pub-43">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="imaging">
+              <p class="title" id="pub-44">Optimization and Application of a Pathology Computer Assisted Microscope (PathCAM) for Real-Time Slide Digitization and Analysis</p>
+              <p class="authors">Max S. Cooper, <b>Kimberly Ashman</b>, <b>Cooper Maira</b>, S. Halat, Andrew B. Sholl, <a href="https://www.cs.tulane.edu/~carola/">Carola Wenk</a>, Sharon E. Fox, et al., <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+              <p class="meta"><span class="venue">Optica MHA 2024 abstract</span></p>
+              <p class="links"></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="civic">
+              <p class="title" id="pub-45"><a href="https://ojs.aaai.org/index.php/HCOMP/article/view/31610">PACE: Participatory AI for Community Engagement</a></p>
+              <p class="authors"><b><a href="https://saadh.info/">Saad Hassan</a></b>, <b><a href="https://syedamahnoorasad.github.io/">Syeda Mah Noor Asad</a></b>, <a href="https://www.motahhare.com/">Motahhare Eslami</a>, <a href="https://www.nicholasmattei.net/">Nicholas Mattei</a>, <a href="https://www.cs.tulane.edu/~aculotta/">Aron Culotta</a>, <a href="https://www.cs.cmu.edu/~johnz/">John Zimmerman</a></p>
+              <p class="meta"><span class="venue">HCOMP 2024 workshop proposal</span></p>
+              <p class="links"><a href="https://saadh.info/papers/hassan-hcomp24/hassan-hcomp24.pdf" aria-describedby="pub-45">PDF</a><a href="https://ojs.aaai.org/index.php/HCOMP/article/view/31610" aria-describedby="pub-45">Publisher</a><a href="https://docs.google.com/presentation/d/1AUEcC3LnJEFJCVE51VEpHMsLw0GYceF7ZD9GHZS2cVk/edit?usp=drivesdk" aria-describedby="pub-45">Slides</a><a href="https://tulanecs.github.io/PACE/" aria-describedby="pub-45">Project page</a><a href="https://saadh.info/papers/hassan-hcomp24/hassan24.bib" aria-describedby="pub-45">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="sign">
+              <p class="title" id="pub-46"><a href="https://dl.acm.org/doi/10.1145/3663548.3688504">Towards a Rich Format for Closed-Captioning</a></p>
+              <p class="authors"><a href="https://www.lloydmay.net/">Lloyd May</a>, Alex Williams, <b><a href="https://saadh.info/">Saad Hassan</a></b>, <a href="https://markcartwright.com/">Mark Cartwright</a>, <a href="https://people.njit.edu/profile/sl287">Sooyeon Lee</a></p>
+              <p class="meta"><span class="venue">ASSETS 2024 demo</span></p>
+              <p class="links"><a href="https://saadh.info/papers/may-assets24/may-assets24.pdf" aria-describedby="pub-46">PDF</a><a href="https://dl.acm.org/doi/10.1145/3663548.3688504" aria-describedby="pub-46">ACM DL</a><a href="https://github.com/disjoylab/Rich-Caption-Editor" aria-describedby="pub-46">Code</a><a href="https://www.youtube.com/watch?v=-E6I5rKPpOI" aria-describedby="pub-46">Video</a><a href="https://redarmy34.github.io/RCE-WebGL-Page/" aria-describedby="pub-46">Project page</a><a href="https://saadh.info/papers/may-assets24/may24.bib" aria-describedby="pub-46">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="scripts">
+              <p class="title" id="pub-47"><a href="https://doi.org/10.1109/VDS63897.2024.00005">Visualization and Automation in Data Science: Exploring the Paradox of Humans-in-the-Loop</a></p>
+              <p class="authors">Jen Rogers, Marie Anastacio, Jürgen Bernard, Mehdi Chakhchoukh, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b>, Andreas Kerren, Steffen Koch, Lars Kotthoff, Cagatay Turkay, Emily Wall</p>
+              <p class="meta"><span class="venue">VDS 2024 short paper</span></p>
+              <p class="links"><a href="https://doi.org/10.1109/VDS63897.2024.00005" aria-describedby="pub-47">DOI</a></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="semantic">
+              <p class="title" id="pub-48"><a href="https://arxiv.org/abs/2409.03949">Visualizing Spatial Semantics of Dimensionally Reduced Text Embeddings</a></p>
+              <p class="authors">Wei Liu, <a href="https://people.cs.vt.edu/north/">Chris North</a>, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b></p>
+              <p class="meta"><span class="venue">NLViz 2024 workshop paper</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2409.03949" aria-describedby="pub-48">arXiv</a></p>
+            </li>
+</ol></li>
+<li class="year" data-year="2023"><h3>2023</h3><ol class="pubs">
+<li class="pub" data-lead="faust" data-project="scripts">
+              <p class="title" id="pub-49"><a href="https://doi.org/10.1109/VDS60365.2023.00009">Aardvark: Comparative Visualization of Data Analysis Scripts</a></p>
+              <p class="authors"><b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b>, Carlos Scheidegger, <a href="https://people.cs.vt.edu/north/">Chris North</a></p>
+              <p class="meta"><span class="venue">VDS 2023</span></p>
+              <p class="links"><a href="https://doi.org/10.1109/VDS60365.2023.00009" aria-describedby="pub-49">DOI</a><a href="https://rjfaust.github.io/publication/2023-Aardvark" aria-describedby="pub-49">Project page</a></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="semantic">
+              <p class="title" id="pub-50"><a href="https://rjfaust.github.io/publication/2023-Explainable">Explainable Interactive Projections of Images</a></p>
+              <p class="authors">Huimin Han, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b>, Brian Felipe Keith Norambuena, Jiayue Lin, Song Li, <a href="https://people.cs.vt.edu/north/">Chris North</a></p>
+              <p class="meta"><span class="venue">MVA 2023</span></p>
+              <p class="links"><a href="https://rjfaust.github.io/publication/2023-Explainable" aria-describedby="pub-50">Project page</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="topology">
+              <p class="title" id="pub-51">Interactive Visualization and Portable Image Blending of Massive Aerial Image Mosaics</p>
+              <p class="authors">Steve Petruzza, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b>, Amy Gooch, Christine Laney, Tristan Goulden, John M. Schreiner, Steven P. Callahan, <a href="https://www.sci.utah.edu/~pascucci/">Valerio Pascucci</a></p>
+              <p class="meta"><span class="venue">IEEE BigData 2023 short paper</span></p>
+              <p class="links"></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="sign">
+              <p class="title" id="pub-52"><a href="https://dl.acm.org/doi/10.1145/3597638.3614497">Sign Spotter: Design and Initial Evaluation of an Automatic Video-Based American Sign Language Dictionary System</a></p>
+              <p class="authors"><a href="https://matybohacek.com/">Matyas Bohacek</a>, <b><a href="https://saadh.info/">Saad Hassan</a></b></p>
+              <p class="meta"><span class="venue">ASSETS 2023 demo</span></p>
+              <p class="links"><a href="https://saadh.info/papers/bohacek-assets-23/bohacek-assets23.pdf" aria-describedby="pub-52">PDF</a><a href="https://dl.acm.org/doi/10.1145/3597638.3614497" aria-describedby="pub-52">ACM DL</a><a href="https://docs.google.com/presentation/d/1UhX3Ap3oxwrLoa4rAqkLIbQ5XdsmJVEZ/edit?usp=sharing&amp;ouid=108965496603216217412&amp;rtpof=true&amp;sd=true" aria-describedby="pub-52">Slides</a><a href="https://saadh.info/papers/bohacek-assets-23/bohacek23.bib" aria-describedby="pub-52">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="hassan" data-project="sign">
+              <p class="title" id="pub-53"><a href="https://dl.acm.org/doi/10.1145/3604274">Tap to Sign: Towards using American Sign Language for Text Entry on Smartphones</a></p>
+              <p class="authors"><b><a href="https://saadh.info/">Saad Hassan</a></b>, <a href="https://abrahamglasser.com/">Abraham Glasser</a>, Max Shengelia, <a href="https://sites.cc.gatech.edu/home/thad/">Thad Starner</a>, <a href="https://www.deafandloud.com/">Sean Forbes</a>, Nathan Qualls, <a href="https://www.linkedin.com/in/samsepah/">Sam S. Sepah</a></p>
+              <p class="meta"><span class="venue">MobileHCI 2023</span></p>
+              <p class="links"><a href="https://saadh.info/papers/hassan-mobilehci23/hassan-mhci23.pdf" aria-describedby="pub-53">PDF</a><a href="https://dl.acm.org/doi/10.1145/3604274" aria-describedby="pub-53">ACM DL</a><a href="https://docs.google.com/presentation/d/1qPtowSdv61h5odrORvFZah2Q7W98ZIr5RTFdApKjWeU/edit?usp=sharing" aria-describedby="pub-53">Slides</a><a href="https://www.youtube.com/watch?v=hyDtfJhe_aU" aria-describedby="pub-53">Video</a><a href="https://saadh.info/papers/hassan-mobilehci23/hassan23.bib" aria-describedby="pub-53">BibTeX</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="topology">
+              <p class="title" id="pub-54"><a href="https://arxiv.org/abs/2309.13185">Visualizing Topological Importance: A Class-Driven Approach</a></p>
+              <p class="authors"><b><a href="https://demiqin.github.io/">Yu Qin</a></b>, Brittany Terese Fasy, <a href="https://www.cs.tulane.edu/~carola/">Carola Wenk</a>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+              <p class="meta"><span class="venue">arXiv 2023 preprint</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2309.13185" aria-describedby="pub-54">arXiv</a></p>
+            </li>
+</ol></li>
+<li class="year" data-year="2022"><h3>2022</h3><ol class="pubs">
+<li class="pub" data-lead="summa" data-project="topology">
+              <p class="title" id="pub-55"><a href="https://arxiv.org/abs/2105.12208">A Domain-Oblivious Approach for Learning Concise Representations of Filtered Topological Spaces for Clustering</a></p>
+              <p class="authors"><b><a href="https://demiqin.github.io/">Yu Qin</a></b>, Brittany Terese Fasy, <a href="https://www.cs.tulane.edu/~carola/">Carola Wenk</a>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+              <p class="meta"><span class="venue">TVCG 2022</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/2105.12208" aria-describedby="pub-55">arXiv</a></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="semantic">
+              <p class="title" id="pub-56">Explainable Interactive Projections for Image Data</p>
+              <p class="authors">Huimin Han, <b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b>, Brian Felipe Keith Norambuena, R. Prabhu, T. Smith, Song Li, <a href="https://people.cs.vt.edu/north/">Chris North</a></p>
+              <p class="meta"><span class="venue">ISVC 2022</span></p>
+              <p class="links"></p>
+            </li>
+<li class="pub" data-lead="faust" data-project="scripts">
+              <p class="title" id="pub-57"><a href="https://doi.org/10.1109/VDS57266.2022.00009">Interactive Visualization for Data Science Scripts</a></p>
+              <p class="authors"><b><a href="https://rjfaust.github.io/">Rebecca Faust</a></b>, Carlos Scheidegger, Katherine E. Isaacs, William Z. Bernstein, Michael Sharp, <a href="https://people.cs.vt.edu/north/">Chris North</a></p>
+              <p class="meta"><span class="venue">VDS 2022</span></p>
+              <p class="links"><a href="https://doi.org/10.1109/VDS57266.2022.00009" aria-describedby="pub-57">DOI</a><a href="https://rjfaust.github.io/portfolio/Anteater/" aria-describedby="pub-57">Project page</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="imaging">
+              <p class="title" id="pub-58">Multi-modal 3D Image Registration Using Interactive Voxel Grid Deformation and Rendering</p>
+              <p class="authors">Thomas Richard, Yan Chastagnier, Vivien Szabo, Kevin Chalard, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b>, Jean-Marc Thiery, Tamy Boubekeur, <b><a href="http://www.lirmm.fr/~nfaraj/">Noura Faraj</a></b></p>
+              <p class="meta"><span class="venue">VCBM 2022 short paper</span></p>
+              <p class="links"></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="imaging">
+              <p class="title" id="pub-59">Whole Slide Image Data Utilization Informed by Digital Diagnosis Patterns</p>
+              <p class="authors"><b>Kimberly Ashman</b>, <b>Huimin Zhuge</b>, E. Shanley, Sharon Fox, S. Halat, Andrew Sholl, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b>, J. Quincy Brown</p>
+              <p class="meta"><span class="venue">J Pathol Inform 2022</span></p>
+              <p class="links"><a href="https://pubmed.ncbi.nlm.nih.gov/36268057/" aria-describedby="pub-59">PubMed</a></p>
+            </li>
+</ol></li>
+<li class="year" data-year="2021"><h3>2021</h3><ol class="pubs">
+<li class="pub" data-lead="summa" data-project="topology">
+              <p class="title" id="pub-60">Adaptive Compositing and Navigation of Variable Resolution Images</p>
+              <p class="authors"><b><a href="https://sites.google.com/site/codylicorish/">Cody Licorish</a></b>, <b><a href="http://www.lirmm.fr/~nfaraj/">Noura Faraj</a></b>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b></p>
+              <p class="meta"><span class="venue">CGF 2021</span></p>
+              <p class="links"></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="imaging">
+              <p class="title" id="pub-61">Deep Learning 2D and 3D Optical Sectioning Microscopy Using Cross-Modality Pix2Pix cGAN Image Translation</p>
+              <p class="authors"><b>Huimin Zhuge</b>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b>, J. Hamm, J. Quincy Brown</p>
+              <p class="meta"><span class="venue">Biomed Opt Express 2021</span></p>
+              <p class="links"><a href="https://pubmed.ncbi.nlm.nih.gov/35003850/" aria-describedby="pub-61">PubMed</a></p>
+            </li>
+<li class="pub" data-lead="summa" data-project="topology">
+              <p class="title" id="pub-62">Efficient and Flexible Hierarchical Data Layouts for a Unified Encoding of Scalar Field Precision and Resolution</p>
+              <p class="authors">Duong Hoang, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b>, Harsh Bhatia, Peter Lindstrom, Pavol Klacansky, Will Usher, Peer-Timo Bremer, <a href="https://www.sci.utah.edu/~pascucci/">Valerio Pascucci</a></p>
+              <p class="meta"><span class="venue">TVCG 2021</span></p>
+              <p class="links"><a href="https://pubmed.ncbi.nlm.nih.gov/33048707/" aria-describedby="pub-62">PubMed</a></p>
+            </li>
+</ol></li>
+<li class="year" data-year="2019"><h3>2019</h3><ol class="pubs">
+<li class="pub" data-lead="summa" data-project="topology">
+              <p class="title" id="pub-63"><a href="https://arxiv.org/abs/1807.11212">Persistence Atlas for Critical Point Variability in Ensembles</a></p>
+              <p class="authors">Guillaume Favelier, <b><a href="http://www.lirmm.fr/~nfaraj/">Noura Faraj</a></b>, <b><a href="https://tulanevisgraphics.bitbucket.io/">Brian Summa</a></b>, Julien Tierny</p>
+              <p class="meta"><span class="venue">TVCG 2019</span></p>
+              <p class="links"><a href="https://arxiv.org/abs/1807.11212" aria-describedby="pub-63">arXiv</a></p>
+            </li>
+</ol></li>
+          </ol>
+          <button type="button" class="more-toggle" id="pubs-toggle" aria-expanded="false" aria-controls="pub-list" hidden>Show all publications</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= PEOPLE ============================= -->
+    <section id="people" class="block people" aria-labelledby="people-title">
+      <div class="wrap">
+        <h2 id="people-title">People</h2>
+        <h3 class="sub-h">Co-directors</h3><div class="codirectors"><article class="codirector" id="rebecca-faust">
+          <div class="cd-head">
+            <div class="avatar lg"><span aria-hidden="true">RF</span><img src="images/people/rebecca-faust.jpg" alt="Rebecca Faust smiling, with long light brown hair, in front of green shrubs." width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div>
+            <div>
+              <h4>Rebecca Faust</h4>
+              <p class="role">Assistant Professor of Computer Science</p>
+              
+            </div>
+          </div>
+          <p class="interests">Visualization, Data science, Human-AI interaction, Explainability</p><p class="email"><a href="mailto:rfaust1@tulane.edu">rfaust1@tulane.edu</a></p>
+          <p class="flinks"><a href="https://rjfaust.github.io/" aria-label="Rebecca Faust, website"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-web"></use></svg><span>Website</span></a><a href="https://scholar.google.com/citations?user=JUVqT-4AAAAJ" aria-label="Rebecca Faust, Google Scholar profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-scholar"></use></svg><span>Scholar</span></a><a href="https://www.linkedin.com/in/rebecca-faust-1a89b7161" aria-label="Rebecca Faust, LinkedIn profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg><span>LinkedIn</span></a></p>
+        </article><article class="codirector" id="saad-hassan">
+          <div class="cd-head">
+            <div class="avatar lg"><span aria-hidden="true">SH</span><img src="images/people/saad-hassan.jpg" alt="Saad Hassan wearing a maroon shirt and black and golden glasses." width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div>
+            <div>
+              <h4>Saad Hassan</h4>
+              <p class="role">Assistant Professor of Computer Science</p>
+              <p class="lab"><a href="https://saadh.info/a11y/">NOLA A11y Lab</a></p>
+            </div>
+          </div>
+          <p class="interests">Accessible computing, Human-computer interaction, Human-AI interaction, Applied AI</p><p class="email"><a href="mailto:saadhassan@tulane.edu">saadhassan@tulane.edu</a></p>
+          <p class="flinks"><a href="https://saadh.info/" aria-label="Saad Hassan, website"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-web"></use></svg><span>Website</span></a><a href="https://saadh.info/a11y/" aria-label="Saad Hassan, group website"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-group"></use></svg><span>Lab</span></a><a href="https://scholar.google.com/citations?user=oy6dZIIAAAAJ" aria-label="Saad Hassan, Google Scholar profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-scholar"></use></svg><span>Scholar</span></a><a href="https://www.linkedin.com/in/saadhassan1/" aria-label="Saad Hassan, LinkedIn profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg><span>LinkedIn</span></a></p>
+        </article><article class="codirector" id="brian-summa">
+          <div class="cd-head">
+            <div class="avatar lg"><span aria-hidden="true">BS</span><img src="images/people/brian-summa.jpg" alt="Brian Summa smiling, in a blue checked shirt, in a lab." width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div>
+            <div>
+              <h4>Brian Summa</h4>
+              <p class="role">Associate Professor of Computer Science</p>
+              <p class="lab"><a href="https://tulanevisgraphics.bitbucket.io/">Tulane Visualization and Graphics Group</a></p>
+            </div>
+          </div>
+          <p class="interests">Data visualization, Computer graphics, Topological data analysis, Image processing, Large data</p><p class="email"><a href="mailto:bsumma@tulane.edu">bsumma@tulane.edu</a></p>
+          <p class="flinks"><a href="https://tulanevisgraphics.bitbucket.io/" aria-label="Brian Summa, group website"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-group"></use></svg><span>Lab</span></a><a href="https://scholar.google.com/citations?user=QKJVjcIAAAAJ" aria-label="Brian Summa, Google Scholar profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-scholar"></use></svg><span>Scholar</span></a><a href="https://www.linkedin.com/in/brian-summa-4b556b64/" aria-label="Brian Summa, LinkedIn profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg><span>LinkedIn</span></a></p>
+        </article></div>
+<h3 class="sub-h">Research staff</h3><ul class="cards"><li class="card"><div class="avatar"><span aria-hidden="true">ER</span><img src="images/people/emily-ribando-gros.jpg" alt="" width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Emily Ribando-Gros</p>
+          <p class="sub">Senior Software Developer</p><p class="plinks"><a href="https://www.linkedin.com/in/eribandogros/" aria-label="Emily Ribando-Gros, LinkedIn profile" title="Linkedin profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg></a></p></div></li></ul>
+<h3 class="sub-h">PhD students</h3><ul class="cards"><li class="card"><div class="avatar"><span aria-hidden="true">CM</span><img src="images/people/cooper-maira.jpg" alt="" width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Cooper Maira</p><p class="kind">PhD student</p><p class="sub">Advised by Brian Summa</p><p class="sub">Expected 2027</p>
+          </div></li><li class="card"><div class="avatar"><span aria-hidden="true">FW</span><img src="images/people/fangzheng-wu.jpg" alt="" width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Fangzheng Wu</p><p class="kind">PhD student</p><p class="sub">Advised by Brian Summa</p><p class="sub">Expected 2027</p>
+          <p class="plinks"><a href="https://scholar.google.com/citations?user=syojgz0AAAAJ" aria-label="Fangzheng Wu, Google Scholar profile" title="Google scholar profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-scholar"></use></svg></a><a href="https://www.researchgate.net/profile/Fangzheng-Wu-2" aria-label="Fangzheng Wu, ResearchGate profile" title="Researchgate profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-rg"></use></svg></a></p></div></li><li class="card"><div class="avatar"><span aria-hidden="true">SM</span><img src="images/people/syeda-mah-noor-asad.jpg" alt="Syeda Mah Noor Asad in a floral dress, standing in front of greenery." width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Syeda Mah Noor Asad</p><p class="kind">PhD student</p><p class="sub">Advised by Saad Hassan</p><p class="sub">Expected 2029</p>
+          <p class="plinks"><a href="https://syedamahnoorasad.github.io/" aria-label="Syeda Mah Noor Asad, website" title="Website"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-web"></use></svg></a><a href="https://scholar.google.com/citations?user=gt453SAAAAAJ" aria-label="Syeda Mah Noor Asad, Google Scholar profile" title="Google scholar profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-scholar"></use></svg></a></p></div></li><li class="card"><div class="avatar"><span aria-hidden="true">YC</span><img src="images/people/yongbo-chen.jpg" alt="" width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Yongbo Chen</p><p class="kind">PhD student</p><p class="sub">Advised by Rebecca Faust</p><p class="sub">Expected 2029</p>
+          <p class="plinks"><a href="https://cybersakura.github.io/" aria-label="Yongbo Chen, website" title="Website"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-web"></use></svg></a><a href="https://scholar.google.com/citations?user=eRUvzncAAAAJ" aria-label="Yongbo Chen, Google Scholar profile" title="Google scholar profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-scholar"></use></svg></a><a href="https://www.linkedin.com/in/yongbo-chen-338074184" aria-label="Yongbo Chen, LinkedIn profile" title="Linkedin profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg></a></p></div></li><li class="card"><div class="avatar"><span aria-hidden="true">NN</span><img src="images/people/nazmun-nahar-khanom.jpg" alt="Nazmun Nahar Khanom in a purple headscarf, speaking into a microphone." width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Nazmun Nahar Khanom</p><p class="kind">PhD student</p><p class="sub">Advised by Saad Hassan</p><p class="sub">Expected 2029</p>
+          <p class="plinks"><a href="https://tithi-khan.github.io/" aria-label="Nazmun Nahar Khanom, website" title="Website"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-web"></use></svg></a><a href="https://scholar.google.com/citations?user=AxP07yIAAAAJ" aria-label="Nazmun Nahar Khanom, Google Scholar profile" title="Google scholar profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-scholar"></use></svg></a><a href="https://www.linkedin.com/in/nazmun-nahar-khanom-9135b51a9" aria-label="Nazmun Nahar Khanom, LinkedIn profile" title="Linkedin profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg></a></p></div></li><li class="card"><div class="avatar"><span aria-hidden="true">CK</span><img src="images/people/chaelin-kim.jpg" alt="Chaelin Kim outdoors in sunglasses and a white top, holding a tumbler." width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Chaelin Kim</p><p class="kind">PhD student</p><p class="sub">Advised by Saad Hassan</p><p class="sub">Expected 2029</p>
+          <p class="plinks"><a href="https://chaelin0722.github.io/introduction/" aria-label="Chaelin Kim, website" title="Website"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-web"></use></svg></a><a href="https://scholar.google.com/citations?user=8Qy1l74AAAAJ" aria-label="Chaelin Kim, Google Scholar profile" title="Google scholar profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-scholar"></use></svg></a><a href="https://www.linkedin.com/in/chae-lin-kim/" aria-label="Chaelin Kim, LinkedIn profile" title="Linkedin profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg></a></p></div></li><li class="card"><div class="avatar"><span aria-hidden="true">YZ</span><img src="images/people/yan-zhu.jpg" alt="" width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Yan Zhu</p><p class="kind">PhD student</p><p class="sub">Advised by Rebecca Faust</p><p class="sub">Expected 2029</p>
+          <p class="plinks"><a href="https://www.thesupercarry.com/" aria-label="Yan Zhu, website" title="Website"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-web"></use></svg></a></p></div></li><li class="card"><div class="avatar"><span aria-hidden="true">AD</span><img src="images/people/arjun-dadhwal.jpg" alt="" width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Arjun Dadhwal</p><p class="kind">PhD student</p><p class="sub">Advised by Brian Summa</p><p class="sub">Expected 2030</p>
+          <p class="plinks"><a href="https://arjdad.com/" aria-label="Arjun Dadhwal, website" title="Website"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-web"></use></svg></a></p></div></li><li class="card"><div class="avatar"><span aria-hidden="true">AO</span><img src="images/people/abby-ortego.jpg" alt="" width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Abby Ortego</p><p class="kind">PhD student</p><p class="sub">Advised by Rebecca Faust and Nicholas Mattei</p><p class="sub">Expected 2030</p>
+          <p class="plinks"><a href="https://abbyortego.github.io/" aria-label="Abby Ortego, website" title="Website"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-web"></use></svg></a></p></div></li></ul>
+<h3 class="sub-h">Undergraduate researchers</h3><ul class="cards"><li class="card"><div class="avatar"><span aria-hidden="true">HD</span><img src="images/people/evelyn-nguyen.jpg" alt="Evelyn Nguyen smiling, with long dark hair, in front of a stone building." width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Hoang Dieu Linh (Evelyn) Nguyen</p><p class="kind">Undergraduate researcher</p><p class="sub">Advised by Saad Hassan</p>
+          <p class="plinks"><a href="https://www.linkedin.com/in/evelynngh" aria-label="Hoang Dieu Linh (Evelyn) Nguyen, LinkedIn profile" title="Linkedin profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg></a></p></div></li></ul>
+<h3 class="sub-h">Capstone students</h3><ul class="cards"><li class="card"><div class="avatar"><span aria-hidden="true">CE</span><img src="images/people/campbell-endries.jpg" alt="Campbell Endries smiling, with long brown hair, in a black blazer." width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Campbell Endries</p><p class="kind">Capstone student</p><p class="sub">Advised by Saad Hassan</p>
+          <p class="plinks"><a href="https://www.linkedin.com/in/campbell-endries-108597331/" aria-label="Campbell Endries, LinkedIn profile" title="Linkedin profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg></a></p></div></li><li class="card"><div class="avatar"><span aria-hidden="true">AG</span><img src="images/people/aaron-gershkovich.jpg" alt="" width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Aaron Gershkovich</p><p class="kind">Capstone student</p><p class="sub">Advised by Emily Ribando-Gros</p>
+          <p class="plinks"><a href="https://www.linkedin.com/in/aaron-gershkovich" aria-label="Aaron Gershkovich, LinkedIn profile" title="Linkedin profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg></a></p></div></li><li class="card"><div class="avatar"><span aria-hidden="true">NM</span><img src="images/people/nikhil-modayur.jpg" alt="" width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Nikhil Modayur</p><p class="kind">Capstone student</p><p class="sub">Advised by Emily Ribando-Gros</p>
+          <p class="plinks"><a href="https://www.linkedin.com/in/nikhil-modayur" aria-label="Nikhil Modayur, LinkedIn profile" title="Linkedin profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg></a></p></div></li><li class="card"><div class="avatar"><span aria-hidden="true">JS</span><img src="images/people/jaret-solomon.jpg" alt="Jaret Solomon smiling in a navy suit and tie." width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Jaret Solomon</p><p class="kind">Capstone student</p><p class="sub">Advised by Saad Hassan</p>
+          <p class="plinks"><a href="https://www.linkedin.com/in/jaretsolomon/" aria-label="Jaret Solomon, LinkedIn profile" title="Linkedin profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg></a></p></div></li></ul>
+<h3 class="sub-h alumni-h">Alumni</h3>
+<h4 class="sub-h2">PhD and postdoctoral alumni</h4><ul class="cards"><li class="card"><div class="avatar"><span aria-hidden="true">YQ</span><img src="images/people/yu-demi-qin.jpg" alt="" width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Yu (Demi) Qin</p><p class="sub">Computer Science PhD, 2024</p><p class="sub">With Brian Summa and Carola Wenk</p><p class="next">Now Research Scientist, National Laboratory of the Rockies (NLR)</p>
+              <p class="plinks"><a href="https://demiqin.github.io/" aria-label="Yu (Demi) Qin, website" title="Website"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-web"></use></svg></a><a href="https://scholar.google.com/citations?user=jYuY0bwAAAAJ" aria-label="Yu (Demi) Qin, Google Scholar profile" title="Google scholar profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-scholar"></use></svg></a><a href="https://www.linkedin.com/in/yu-demi-qin-30261817a" aria-label="Yu (Demi) Qin, LinkedIn profile" title="Linkedin profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg></a></p></div></li><li class="card"><div class="avatar"><span aria-hidden="true">CL</span><img src="images/people/cody-licorish.jpg" alt="" width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Cody Licorish</p><p class="sub">Computer Science PhD</p><p class="sub">With Brian Summa</p><p class="next">Now at Accelya Group</p>
+              <p class="plinks"><a href="https://sites.google.com/site/codylicorish/" aria-label="Cody Licorish, website" title="Website"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-web"></use></svg></a><a href="https://www.linkedin.com/in/cody-licorish-b1074a69" aria-label="Cody Licorish, LinkedIn profile" title="Linkedin profile"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"></use></svg></a></p></div></li><li class="card"><div class="avatar"><span aria-hidden="true">HZ</span><img src="images/people/huimin-zhuge.jpg" alt="" width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Huimin (Joy) Zhuge</p><p class="sub">Biomedical Engineering PhD and Computer Science master&#x27;s</p><p class="sub">With Brian Summa</p><p class="next">Now at FDA</p>
+              </div></li><li class="card"><div class="avatar"><span aria-hidden="true">KA</span><img src="images/people/kimberly-ashman.jpg" alt="" width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Kimberly Ashman</p><p class="sub">Bioinnovation PhD</p><p class="sub">With Brian Summa</p><p class="next">Now at New York Yankees Sports Analytics</p>
+              </div></li><li class="card"><div class="avatar"><span aria-hidden="true">NF</span><img src="images/people/noura-faraj.jpg" alt="" width="320" height="320" loading="lazy" decoding="async" onerror="this.remove()"></div><div><p class="name">Noura Faraj</p><p class="sub">Postdoc</p><p class="sub">With Brian Summa</p><p class="next">Now Associate Professor, Université de Montpellier (LIRMM)</p>
+              <p class="plinks"><a href="http://www.lirmm.fr/~nfaraj/" aria-label="Noura Faraj, website" title="Website"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-web"></use></svg></a></p></div></li></ul>
+<h4 class="sub-h2">Student alumni</h4><div class="alum-groups"><div class="alum-group"><h5>Master’s <span class="count">2</span></h5><ul><li><a href="https://www.linkedin.com/in/justin-haysbert-a37859223/">Justin Haysbert</a> <span class="yr">2025</span></li><li><a href="https://www.linkedin.com/in/will-silver-wagman/">Will Silver Wagman</a> <span class="yr">2024</span></li></ul></div><div class="alum-group"><h5>Undergraduate <span class="count">8</span></h5><ul><li><a href="https://www.linkedin.com/in/yaniv-naggar-727b95132/">Yaniv Nagar</a> <span class="yr">2026</span></li><li>Cameron McLaren <span class="yr">2025</span></li><li><a href="https://www.linkedin.com/in/madhangikrishnan">Madhangi Krishnan</a> <span class="yr">2025</span></li><li><a href="https://www.linkedin.com/in/oscarxiao">Oscar Xiao</a> <span class="yr">2025</span></li><li><a href="https://www.linkedin.com/in/sydneylwade/">Sydney Wade</a> <span class="yr">2025</span></li><li><a href="https://www.linkedin.com/in/caitlinpchen/">Caitlin Chen</a> <span class="yr">2024</span></li><li><a href="https://www.linkedin.com/in/madeline-murray-exactics">Madeline “Dylan” Murray</a> <span class="yr">2024</span></li><li><a href="https://www.linkedin.com/in/michaelweild">Michael M. Weild</a> <span class="yr">2024</span></li></ul></div><div class="alum-group"><h5>Capstone <span class="count">14</span></h5><ul><li><a href="https://www.linkedin.com/in/emily-aymond-b09818288/">Emily Aymond</a> <span class="yr">2026</span></li><li><a href="https://www.linkedin.com/in/jaimiemorris/">Jaimie Morris</a> <span class="yr">2026</span></li><li><a href="https://www.linkedin.com/in/madelinefdavis/">Madeline Davis</a> <span class="yr">2026</span></li><li><a href="https://www.linkedin.com/in/eschaferkotter/">Ethan Schaferkotter</a> <span class="yr">2025</span></li><li><a href="https://www.linkedin.com/in/hubert-mendez-3124a0330/">Hubert Mendez</a> <span class="yr">2025</span></li><li><a href="https://www.linkedin.com/in/isabella-blair-46176323b/">Izzy Blair</a> <span class="yr">2025</span></li><li><a href="https://www.linkedin.com/in/miranda-diaz03/">Miranda Diaz</a> <span class="yr">2025</span></li><li><a href="https://www.linkedin.com/in/sam-demarinis-50318020b/">Sam DeMarinis</a> <span class="yr">2025</span></li><li>Zoe S. Oboler <span class="yr">2025</span></li><li><a href="https://www.linkedin.com/in/devin-gutierrez/">Devin Gutierrez</a> <span class="yr">2024</span></li><li><a href="https://www.linkedin.com/in/gsagrera/">Gabriel Sagrera</a> <span class="yr">2024</span></li><li><a href="https://www.linkedin.com/in/ryan-stevens0221/">Ryan Stevens</a> <span class="yr">2024</span></li><li><a href="https://www.linkedin.com/in/shayne-shelton/">Shayne Shelton</a> <span class="yr">2024</span></li><li><a href="https://www.linkedin.com/in/tanner-martz/">Tanner Martz</a> <span class="yr">2024</span></li></ul></div><div class="alum-group"><h5>High school <span class="count">2</span></h5><ul><li>Emile H. Mattei <span class="yr">2026</span></li><li><a href="https://www.linkedin.com/in/mauro-nunez06/">Mauro E. Nunez</a> <span class="yr">2024</span></li></ul></div></div>
+      </div>
+    </section>
+
+    <!-- ============================= GRANTS ============================= -->
+    <section id="grants" class="block grants" aria-labelledby="grants-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="grants-title">Grants</h2>
+          <p>Our research is supported by ARPA-H, the U.S. Department of Energy, NSF, NIH, the Computing Research Association, Louisiana Board of Regents, and Tulane University. Largest awards first.</p>
+        </div>
+        <ul class="grant-grid" id="grant-list" aria-label="Grants, largest first">
+          <li class="grant">
+          <p class="funder">ARPA-H (Precision Surgical Interventions)</p>
+          <h3 id="gr-0">MAGIC-SCAN: Machine-Learning Assisted Gigantic Image Cancer Margin Scanner</h3>
+          <p class="gwho"><a href="#brian-summa">Brian Summa</a>, Co-lead</p>
+          <p class="gmeta"><span class="status on">Active</span><span>2024–2029</span></p>
+          <p class="amount">Up to $22.9M</p><p class="amount-note">Total for the full team</p>
+          <a class="award-link" href="https://news.tulane.edu/pr/president-joe-biden-will-announce-23-million-funding-tulane-university-invent-advanced-cancer" aria-describedby="gr-0">Award details</a>
+        </li>
+<li class="grant">
+          <p class="funder">U.S. Department of Energy (Office of Science Early Career Research Program)</p>
+          <h3 id="gr-1">Early Career Award: Formalizing, Searching, and Streaming Massive Scientific Data</h3>
+          <p class="gwho"><a href="#brian-summa">Brian Summa</a>, PI</p>
+          <p class="gmeta"><span class="status on">Active</span><span>2022–2027</span></p>
+          <p class="amount">$750,000</p>
+          <a class="award-link" href="https://news.tulane.edu/pr/tulane-professor-wins-early-career-award-tame-massive-supercomputer-datasets" aria-describedby="gr-1">Award details</a>
+        </li>
+<li class="grant">
+          <p class="funder">NSF</p>
+          <h3 id="gr-2">Designing Civic AI to Connect Residents, Communities, and Local Governments</h3>
+          <p class="gwho"><a href="#saad-hassan">Saad Hassan</a>, PI</p>
+          <p class="gmeta"><span class="status on">Active</span><span>2026–2029</span></p>
+          <p class="amount">$449,868</p><p class="amount-note">Part of a $899,868 collaborative award</p>
+          <a class="award-link" href="https://www.nsf.gov/awardsearch/show-award?AWD_ID=2619509" aria-describedby="gr-2">Award details</a>
+        </li>
+<li class="grant">
+          <p class="funder">NIH (NIGMS R01GM143789)</p>
+          <h3 id="gr-3">PathCAM: Connecting the Digital Data Pipeline in Diagnostic Pathology with Onboard-Camera Variable Resolution Slide Imaging</h3>
+          <p class="gwho"><a href="#brian-summa">Brian Summa</a>, Co-I</p>
+          <p class="gmeta"><span class="status on">Active</span><span>Since 2022</span></p>
+          <p class="amount">$416K in FY2025</p>
+          
+        </li>
+<li class="grant">
+          <p class="funder">CRA / NSF Computing Innovation Fellows</p>
+          <h3 id="gr-4">Interactive Semantic Explanations for Deep Learning Visualizations</h3>
+          <p class="gwho"><a href="#rebecca-faust">Rebecca Faust</a>, PI</p>
+          <p class="gmeta"><span class="status">Completed</span><span>2022–2023</span></p>
+          <p class="amount">$280,768</p>
+          <a class="award-link" href="https://cifellows2021.org/" aria-describedby="gr-4">Award details</a>
+        </li>
+<li class="grant" data-extra>
+          <p class="funder">Louisiana Board of Regents</p>
+          <h3 id="gr-5">Enhancing Expressive and Receptive ASL Learning Using AI-Powered Tools</h3>
+          <p class="gwho"><a href="#saad-hassan">Saad Hassan</a>, PI</p>
+          <p class="gmeta"><span class="status on">Active</span><span>2024–2027</span></p>
+          <p class="amount">$102,281</p>
+          <a class="award-link" href="https://www.laregents.edu/wp-content/uploads/2024/04/7.-RSI-Committee-April-24-2024.pdf" aria-describedby="gr-5">Award details</a>
+        </li>
+<li class="grant" data-extra>
+          <p class="funder">NSF</p>
+          <h3 id="gr-6">IUCRC: Planning Grant for AHeAD Center</h3>
+          <p class="gwho"><a href="#saad-hassan">Saad Hassan</a>, Co-PI</p>
+          <p class="gmeta"><span class="status on">Active</span><span>2025–2027</span></p>
+          <p class="amount">$23,999</p>
+          <a class="award-link" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2515250" aria-describedby="gr-6">Award details</a>
+        </li>
+        </ul>
+        <button type="button" class="more-toggle" data-toggle-list="grant-list" aria-expanded="false" data-more="Show 2 more grants" data-less="Show fewer grants">Show 2 more grants</button>
+      </div>
+    </section>
+
+    <!-- ============================== JOIN ============================== -->
+    <section id="join" class="join" aria-labelledby="join-title">
+      <div class="wrap join-inner">
+        <h2 id="join-title">Join us</h2>
+        <p>We are recruiting PhD students and welcome Tulane undergraduates. To apply for the PhD, submit an application to the Tulane Computer Science PhD program and name the co-directors you would like to work with. Undergraduates can email a co-director directly.</p>
+        <p class="join-links">
+          <a class="btn" href="https://sse.tulane.edu/cs">Tulane Computer Science</a>
+          <a class="btn ghost" href="#people">Find a co-director</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot-grid">
+      <div class="foot-id">
+        <p class="foot-name"><svg class="mark" aria-hidden="true" focusable="false"><use href="#i-mark"></use></svg>Human-Centered Computing Group</p>
+        <address>Department of Computer Science, Tulane University, 6823 St. Charles Avenue, New Orleans, LA 70118</address>
+      </div>
+      <div>
+        <h2 class="foot-h">Research groups</h2>
+        <ul><li><a href="https://rjfaust.github.io/">Rebecca Faust</a> <span>Visualization, Data science</span></li>
+<li><a href="https://saadh.info/a11y/">NOLA A11y Lab</a> <span>Saad Hassan</span></li>
+<li><a href="https://tulanevisgraphics.bitbucket.io/">Tulane Visualization and Graphics Group</a> <span>Brian Summa</span></li></ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Contact</h2>
+        <ul><li><a href="mailto:rfaust1@tulane.edu">Rebecca Faust</a></li><li><a href="mailto:saadhassan@tulane.edu">Saad Hassan</a></li><li><a href="mailto:bsumma@tulane.edu">Brian Summa</a></li></ul>
+      </div>
+    </div>
+    <div class="wrap"><div class="foot-bottom">
+      <p>© 2026 Human-Centered Computing Group, <a href="https://sse.tulane.edu/cs">Department of Computer Science</a>, Tulane University.</p>
+      <p>Last updated <time datetime="2026-10-12">October 12, 2026</time>.</p>
+    </div></div>
+  </footer>
+</body>
+</html>

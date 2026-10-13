@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{GROUP_NAME}} | {{INSTITUTION}}</title>
+  <meta name="description" content="{{TAGLINE}}">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#285c4d">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inclusive-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/site.css">
+  <!-- Apply the saved or system theme before first paint so the page does not flash. -->
+  <script>
+    try { var t = localStorage.getItem('hcc-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+  <!--
+    THIS FILE IS A TEMPLATE. Edit content in content/hcc-content.xlsx, then run
+    python3 build.py to produce index.html. Text that is not in the spreadsheet
+    (section intros, header, footer) can be edited right here.
+  -->
+  <a class="skip" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-web" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></g></symbol>
+    <symbol id="i-group" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="3"/><path d="M6.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="5" cy="10.5" r="2.1"/><circle cx="19" cy="10.5" r="2.1"/><path d="M1.5 18.5a3.6 3.6 0 0 1 4.6-3.4M22.5 18.5a3.6 3.6 0 0 0-4.6-3.4"/></g></symbol>
+    <symbol id="i-scholar" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm-6.5 9.6V16c0 1.9 2.9 4 6.5 4s6.5-2.1 6.5-4v-3.4L12 16.2l-6.5-3.6z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></symbol>
+    <symbol id="i-rg" viewBox="0 0 24 24"><text x="12" y="16.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="12.5" fill="currentColor">RG</text></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 1.8v2.6M12 19.6v2.6M1.8 12h2.6M19.6 12h2.6M4.8 4.8l1.8 1.8M17.4 17.4l1.8 1.8M4.8 19.2l1.8-1.8M17.4 6.6l1.8-1.8"/></g></symbol>
+    <symbol id="i-mark" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M20 3.5c9.6 0 16.5 6.6 16.5 15.6 0 10-7.6 17.4-17.2 17.4C9.6 36.5 3.5 29.6 3.5 20.8 3.5 10.6 10.6 3.5 20 3.5z"/><path d="M21.2 10c5.4 0 9.3 3.9 9.3 9.1 0 5.9-4.4 10.4-10.1 10.4-5.3 0-8.9-4-8.9-9.1 0-6 4.2-10.4 9.7-10.4z"/><path d="M21.6 16.3c2.2 0 3.6 1.5 3.6 3.5 0 2.3-1.7 4-3.9 4-2.1 0-3.4-1.5-3.4-3.5 0-2.3 1.6-4 3.7-4z"/></g></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="#top" aria-label="{{GROUP_NAME}}, {{INSTITUTION}}, back to top">
+        <svg class="mark" aria-hidden="true" focusable="false"><use href="#i-mark"></use></svg>
+        <span class="brand-text"><span class="b1">{{SHORT_NAME}}</span><span class="b2">{{INSTITUTION}}</span></span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="nav" aria-label="Sections">
+        <ul>
+          <li><a href="#news">News</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#people">People</a></li>
+          <li><a href="#grants">Grants</a></li>
+          <li><a class="join-link" href="#join">Join us</a></li>
+        </ul>
+      </nav>
+      <button class="theme-btn" type="button" aria-label="Use dark theme" title="Switch theme">
+        <svg class="icon moon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg>
+        <svg class="icon sun" aria-hidden="true" focusable="false"><use href="#i-sun"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <h1 id="hero-title">{{GROUP_NAME}}</h1>
+          <p class="tagline">{{TAGLINE}}</p>
+          <div class="codirectors-strip">
+            <p id="codir-label">Co-directed by</p>
+            <ul aria-labelledby="codir-label">
+              {{CODIRECTOR_CHIPS}}
+            </ul>
+          </div>
+        </div>
+        <!-- Everyone currently in the group, built from the spreadsheet. Names are in the People section. -->
+        <ul class="faces" aria-hidden="true">
+          {{FACES}}
+        </ul>
+      </div>
+    </section>
+
+    <section class="about wrap" aria-label="About the group">
+      <p>{{ABOUT}}</p>
+      <div class="labs">
+        <p id="labs-label">Research groups</p>
+        <ul aria-labelledby="labs-label">{{LABS}}</ul>
+      </div>
+    </section>
+
+    <!-- ============================== NEWS ============================== -->
+    <section id="news" class="block news" aria-labelledby="news-title">
+      <div class="wrap">
+        <h2 id="news-title">News</h2>
+        <div class="features">
+          {{NEWS_FEATURED}}
+        </div>
+        <ol class="news-list" id="news-list">
+          {{NEWS_ITEMS}}
+        </ol>
+        {{NEWS_TOGGLE}}
+      </div>
+    </section>
+
+    <!-- ============================ RESEARCH ============================ -->
+    <section id="research" class="block" aria-labelledby="research-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="research-title">Research</h2>
+          <p>{{N_PROJECTS}} projects across the group. Each one links to its publications and funding.</p>
+        </div>
+        <div class="projects">
+          {{PROJECTS}}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== PUBLICATIONS ========================== -->
+    <section id="publications" class="block" aria-labelledby="pubs-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="pubs-title">Publications</h2>
+          <p>Group members’ names are in bold.</p>
+        </div>
+        <h3 class="sub-h">Highlighted</h3>
+        <div class="highlights">
+          {{HIGHLIGHTS}}
+        </div>
+
+        <div class="all-pubs" id="all-pubs">
+          <h3 class="sub-h">All publications <span class="count">{{N_PUBS}}</span></h3>
+          <div class="filters">
+            <label class="select" for="lead-filter">
+              <span>Co-director</span>
+              <select id="lead-filter">
+                {{LEAD_BUTTONS}}
+              </select>
+            </label>
+            <label class="select" for="project-filter">
+              <span>Area</span>
+              <select id="project-filter">
+                {{AREA_BUTTONS}}
+              </select>
+            </label>
+          </div>
+          <p class="filter-status" id="filter-status" aria-live="polite"></p>
+          <ol class="years" id="pub-list">
+            {{PUBLICATIONS}}
+          </ol>
+          <button type="button" class="more-toggle" id="pubs-toggle" aria-expanded="false" aria-controls="pub-list" hidden>Show all publications</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= PEOPLE ============================= -->
+    <section id="people" class="block people" aria-labelledby="people-title">
+      <div class="wrap">
+        <h2 id="people-title">People</h2>
+        {{PEOPLE}}
+      </div>
+    </section>
+
+    <!-- ============================= GRANTS ============================= -->
+    <section id="grants" class="block grants" aria-labelledby="grants-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="grants-title">Grants</h2>
+          <p>Our research is supported by {{FUNDERS}}. Largest awards first.</p>
+        </div>
+        <ul class="grant-grid" id="grant-list" aria-label="Grants, largest first">
+          {{GRANT_CARDS}}
+        </ul>
+        {{GRANT_TOGGLE}}
+      </div>
+    </section>
+
+    <!-- ============================== JOIN ============================== -->
+    <section id="join" class="join" aria-labelledby="join-title">
+      <div class="wrap join-inner">
+        <h2 id="join-title">Join us</h2>
+        <p>{{JOIN_TEXT}}</p>
+        <p class="join-links">
+          <a class="btn" href="{{PHD_URL}}">Tulane Computer Science</a>
+          <a class="btn ghost" href="#people">Find a co-director</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot-grid">
+      <div class="foot-id">
+        <p class="foot-name"><svg class="mark" aria-hidden="true" focusable="false"><use href="#i-mark"></use></svg>{{GROUP_NAME}}</p>
+        <address>{{ADDRESS}}</address>
+      </div>
+      <div>
+        <h2 class="foot-h">Research groups</h2>
+        <ul>{{LABS}}</ul>
+      </div>
+      <div>
+        <h2 class="foot-h">Contact</h2>
+        <ul>{{EMAILS}}</ul>
+      </div>
+    </div>
+    <div class="wrap"><div class="foot-bottom">
+      <p>© {{YEAR}} {{GROUP_NAME}}, <a href="{{DEPT_URL}}">Department of Computer Science</a>, {{INSTITUTION}}.</p>
+      <p>Last updated <time datetime="{{UPDATED_ISO}}">{{UPDATED}}</time>.</p>
+    </div></div>
+  </footer>
+</body>
+</html>
