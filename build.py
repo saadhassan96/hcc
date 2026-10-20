@@ -601,12 +601,18 @@ def render_grants(grants, people, minimum=10000, top=5):
         toggle = (f'<button type="button" class="more-toggle" data-toggle-list="grant-list" aria-expanded="false" '
                   f'data-more="Show {more} more grants" data-less="Show fewer grants">Show {more} more grants</button>')
     funders = []
+    names = {'CRA / NSF Computing Innovation Fellows': 'the Computing Research Association',
+             'U.S. Department of Energy': 'the U.S. Department of Energy',
+             'Louisiana Board of Regents': 'the Louisiana Board of Regents',
+             'U.S.-Israel Center of Excellence in Energy, Engineering and Water':
+                 'the U.S.-Israel Center of Excellence in Energy, Engineering and Water'}
     for g in shown:
         f = funder_short(g.get('Funder'))
-        f = {'CRA / NSF Computing Innovation Fellows': 'the Computing Research Association',
-             'U.S. Department of Energy': 'the U.S. Department of Energy'}.get(f, f)
-        if f not in funders:
-            funders.append(f)
+        # "NSF/NIH" counts as both agencies, so the sentence names each once.
+        for part in ([names[f]] if f in names else [x.strip() for x in f.split('/')]):
+            part = names.get(part, part)
+            if part not in funders:
+                funders.append(part)
     funders.append('Tulane University')
     funder_text = ', '.join(funders[:-1]) + ', and ' + funders[-1] if len(funders) > 2 else ' and '.join(funders)
     n_active = sum(1 for g in shown if active(g))
