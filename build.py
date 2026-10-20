@@ -547,12 +547,18 @@ def grant_value(g):
 
 
 def render_grants(grants, people, minimum=10000, top=5):
-    """External awards at or above `minimum`, largest first. The first `top` show; the rest sit
-    behind a Show more button. Tulane internal awards are left off the site."""
+    """External awards at or above `minimum`, largest first. `top` of them show and the rest sit
+    behind a Show more button. Grants with Pin? = Yes always make the first group (they still
+    appear in amount order). Tulane internal awards are left off the site."""
     year = TODAY.year
     shown = [g for g in grants if not str(g.get('Funder') or '').lower().startswith('tulane')
              and grant_value(g) >= minimum]
     shown.sort(key=lambda g: (-grant_value(g), str(g.get('Title') or '').lower()))
+    pinned = [g for g in shown if is_yes(g.get('Pin?'))]
+    first = pinned + [g for g in shown if g not in pinned][:max(0, top - len(pinned))]
+    rest = [g for g in shown if g not in first]
+    shown = [g for g in shown if g in first] + rest
+    top = len(first)
 
     def active(g):
         end = g.get('End year')
@@ -604,8 +610,8 @@ def render_grants(grants, people, minimum=10000, top=5):
     names = {'CRA / NSF Computing Innovation Fellows': 'the Computing Research Association',
              'U.S. Department of Energy': 'the U.S. Department of Energy',
              'Louisiana Board of Regents': 'the Louisiana Board of Regents',
-             'U.S.-Israel Center of Excellence in Energy, Engineering and Water':
-                 'the U.S.-Israel Center of Excellence in Energy, Engineering and Water'}
+             'Center of Excellence in Energy, Engineering and Water':
+                 'the Center of Excellence in Energy, Engineering and Water'}
     for g in shown:
         f = funder_short(g.get('Funder'))
         # "NSF/NIH" counts as both agencies, so the sentence names each once.
